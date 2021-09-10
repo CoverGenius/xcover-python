@@ -27,4 +27,5 @@ jobs:
       - run: poetry config --local virtualenvs.in-project true
       - run: poetry install
       - run: poetry run pre-commit run -a
+      - run: cp .github-ci.env .env
       - run: poetry run pytest
