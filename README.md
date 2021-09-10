@@ -18,7 +18,7 @@ or
 - Authentication
 - Simple configuration using env variables
 
-# Configuraation
+# Configuration
 
 ## Config object
 
