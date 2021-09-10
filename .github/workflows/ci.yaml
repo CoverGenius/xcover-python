@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - v** # Run on all version tags
+  pull_request:
+
+jobs:
+  pytest:
+    name: pytest
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: [ 3.8 ]
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python }}
+          architecture: x64
+      - run: pip install --upgrade pip
+      - run: pip install poetry
+      - run: poetry config --local virtualenvs.in-project true
+      - run: poetry install
+      - run: poetry run pre-commit run -a
+      - run: poetry run pytest
