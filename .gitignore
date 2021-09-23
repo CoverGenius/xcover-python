@@ -4,5 +4,6 @@ __pycache__/
 *$py.class
 
 # Poetry
+dist
 poetry.lock
 .env

@@ -1,8 +1,17 @@
 [tool.poetry]
-name = "xcore"
+name = "xcover-python"
 version = "0.0.1"
 description = "Python client for XCover API (XCore)."
 authors = ["Artem Kolesnikov <artem@covergenius.com>"]
+maintainers = ["Artem Kolesnikov <artem@covergenius.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://www.covergenius.com/xcover/"
+repository = "https://github.com/CoverGenius/xcover-python"
+keywords = ["xcover", "api", "api-client", "insurance"]
+packages = [
+    { include = "xcover" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"
