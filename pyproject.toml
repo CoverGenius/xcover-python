@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "xcore"
-version = "0.1.0"
+version = "0.0.0"
 description = "Python client for XCover API (XCore)."
 authors = ["Artem Kolesnikov <artem@covergenius.com>"]
 
