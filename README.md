@@ -1,4 +1,4 @@
-# xcover-python
+# [xcover-python](https://www.covergenius.com/xcover/) &middot; [![codecov](https://codecov.io/gh/CoverGenius/xcover-python/branch/master/graph/badge.svg?token=KINNTVZV07)](https://codecov.io/gh/CoverGenius/xcover-python)
 
 xcover-python is a Python API Client for XCover.
 
@@ -88,12 +88,12 @@ payload = {
     "customer_language": "en",
 }
 # Calling XCover API
-response = client.call(
+response: requests.Response = client.call(
     method="POST",
     url="partners/LLODT/quotes/",
     payload=payload,
 )
 
-quote: requests.Response = response
-print(response.json())
+quote = response.json()
+print(quote)
 ```
