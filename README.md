@@ -1,11 +1,10 @@
-# XCover SDK for Python
+# xcover-python
 
-XCover SDK is a Python package that simplifies XCover API integration.
+xcover-python is a Python API Client for XCover.
 
-# Installation 
+## Installation 
 
-XCover SDK is available on PyPI. 
-You can use the following commands to install the latest version:
+xcover-python is available on PyPI. To install the latest version use:
 
     pip install xcover
 
@@ -13,16 +12,17 @@ or
 
     poertry install xcover 
 
-# Features
+## Features
 
 - Authentication
 - Simple configuration using env variables
+- (WIP) High-level API to perform partner operations on quotes and bookings
 
-# Configuration
+## Configuration
 
-## Config object
+### Config object
 
-The library provides `XCoverConfig` dataclass that can be used as following:
+The library provides `XCoverConfig` dataclass that can be used as shown:
 
 ```python
 from xcover import XCover, XCoverConfig
@@ -38,11 +38,11 @@ client = XCover(
 
 ```
 
-## Env variables
+### Env variables
 
-Alternatively, the library can be configured using env variables. 
+Alternatively, it is possible to use env variables. 
 
-The full list of config options is below:
+The full list of configuration options:
 
 * `XC_BASE_URL` (`XCoverConfig.base_url`): XCover base URL (e.g. `https://api.xcover.com/api/v2/`). 
 * `XC_PARTNER_CODE` (`XCoverConfig.partner_code`): Partner code (e.g. `LLODT`).
@@ -52,9 +52,9 @@ The full list of config options is below:
 * `XC_AUTH_ALGORITHM` (`XCoverConfig.auth_algorithm`): HMAC encoding algorithm to use. Default is `hmac-sha512`.
 * `XC_AUTH_HEADERS` (`XCoverConfig.auth_headers`): Headers to sign. Default is `(request-target) date`.
 
-# Usage example
+## Usage example
 
-## Using `call` method
+### Using low-level `call` method
 
 ```python
 import requests
@@ -94,5 +94,6 @@ response = client.call(
     payload=payload,
 )
 
-quote: requests.Response = response.json()
+quote: requests.Response = response
+print(response.json())
 ```
