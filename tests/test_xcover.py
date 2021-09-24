@@ -53,6 +53,12 @@ def test_quote(client: XCover):
 
 
 @pytest.mark.vcr
+def test_get_quote(client: XCover):
+    response = client.get_quote("WFJUQ-UDYCA-INS")
+    assert response["id"] is not None
+
+
+@pytest.mark.vcr
 def test_quote_422(client: XCover):
     with pytest.raises(XCoverHttpException) as err:
         client.create_quote(QuotePackageFactory(policy_version="unknown"))

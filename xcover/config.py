@@ -37,10 +37,6 @@ class AuthConfig:
     def build_string_to_sign(self, request: PreparedRequest) -> str:
         parts = []
         for header in self.headers_as_list:
-            # it is lowered already in parse_signature
-            if not header:
-                continue
-
             if header == "(request-target)":
                 parsed_url: ParseResult = urlparse(request.url)
                 parts.append(

@@ -1,0 +1,87 @@
+interactions:
+- request:
+    body: 'null'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Fri, 24 Sep 2021 00:56:30 GMT
+    method: GET
+    uri: https://api.xcover.com/xcover/partners/LLODT/quotes/WFJUQ-UDYCA-INS/
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Allow:
+      - GET, PATCH, DELETE, HEAD, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 693b7c8f6fe016c1-SYD
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 24 Sep 2021 10:56:31 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 200
+      message: OK
+version: 1

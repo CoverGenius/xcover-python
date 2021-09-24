@@ -57,3 +57,8 @@ class XCover:
         )
 
         return self.handle_response(response)
+
+    def get_quote(self, quote_id, params=None):
+        response = self.call("GET", f"partners/LLODT/quotes/{quote_id}/", params=params)
+
+        return self.handle_response(response)

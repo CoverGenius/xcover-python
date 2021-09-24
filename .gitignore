@@ -7,7 +7,12 @@ __pycache__/
 # Poetry
 *.egg-info/
 dist
+build
 poetry.lock
 
 # Configs
 .env
+
+# Coverage
+.coverage
+coverage.xml

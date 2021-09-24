@@ -24,10 +24,19 @@ pytest-dotenv = "^0.5"
 pytest-recording = "^0.12"
 bump2version = "^1.0"
 factory-boy = "^3.2.0"
+pytest-cov = "^2.12.1"
+coverage = {extras = ["toml"], version = "^5.5"}
 
 [tool.pytest.ini_options]
-addopts = "-s"
+addopts = "-s --cov-report=xml --cov-report=term-missing --cov-report=html --cov=xcover"
 testpaths = ["tests"]
+
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
+
+[tool.coverage.run]
+source = ["xcover"]
+
+[tool.coverage.html]
+directory = "build/coverage"
