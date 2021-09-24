@@ -18,8 +18,8 @@ class XCoverAuth(AuthBase):
         api_secret = self.config.api_secret
         headers = self.config.headers
         algorithm = self.config.algorithm.value
-        date = http_date()
-        request.headers["date"] = date
+        if not request.headers.get("date"):
+            request.headers["date"] = http_date()
 
         signature = hmac.new(
             key=api_secret.encode("utf-8", "strict"),

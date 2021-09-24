@@ -13,6 +13,8 @@ class XCover:
     def __init__(self, config: XCoverConfig = None):
         self.config = config or XCoverConfig()
 
+    default_headers = {"Content-Type": "application/json"}
+
     @property
     def session(self):
         return requests.Session()
@@ -23,13 +25,12 @@ class XCover:
         url: str,
         payload=None,
         params=None,
-        custom_headers: dict = None,
+        headers: dict = None,
     ) -> requests.Response:
+        if headers is None:
+            headers = {}
         full_url = urljoin(self.config.base_url, url)
         session = self.session
-        headers = {"Content-Type": "application/json"}
-        if custom_headers is not None:
-            headers.update(custom_headers)
 
         request = requests.Request(
             method,
@@ -37,7 +38,7 @@ class XCover:
             data=json.dumps(payload, cls=JSONEncoder),
             params=params,
             auth=XCoverAuth(self.config.auth_config),
-            headers=headers,
+            headers={**self.default_headers, **headers},
         )
         prepared_request: requests.PreparedRequest = session.prepare_request(request)
         response = session.send(prepared_request, timeout=self.config.http_timeout)

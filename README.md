@@ -1,10 +1,16 @@
-# [xcover-python](https://www.covergenius.com/xcover/) &middot; [![codecov](https://codecov.io/gh/CoverGenius/xcover-python/branch/master/graph/badge.svg?token=KINNTVZV07)](https://codecov.io/gh/CoverGenius/xcover-python)
+# &middot; xcover-python &middot;
+[![Supported Versions](https://img.shields.io/pypi/pyversions/xcover-python.svg)](https://pypi.org/project/xcover-python)
+[![codecov](https://codecov.io/gh/CoverGenius/xcover-python/branch/master/graph/badge.svg?token=KINNTVZV07)](https://codecov.io/gh/CoverGenius/xcover-python)
 
-xcover-python is a Python API Client for XCover.
+---
+
+`xcover-python` is a Python API Client for [XCover](https://www.covergenius.com/xcover/).
+
+---
 
 ## Installation 
 
-xcover-python is available on PyPI. To install the latest version use:
+`xcover-python` is available on PyPI. To install the latest version run:
 
     pip install xcover
 

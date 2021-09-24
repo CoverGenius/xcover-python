@@ -29,3 +29,8 @@ import uuid
 )
 def test_default(test_input, expected):
     assert JSONEncoder().default(test_input) == expected
+
+
+def test_default_parent():
+    with pytest.raises(TypeError):
+        JSONEncoder().default(None)

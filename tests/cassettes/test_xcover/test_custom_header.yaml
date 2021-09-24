@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"request": [{"policy_type": "event_ticket_protection", "policy_type_version":
-      1, "policy_start_date": "2021-09-25T00:11:11Z", "event_datetime": "2021-10-15T09:01:28Z",
+      1, "policy_start_date": "2021-09-25T12:47:52Z", "event_datetime": "2021-09-27T00:44:50Z",
       "event_name": "Ariana Grande", "event_location": "The O2", "number_of_tickets":
       2, "tickets": [{"price": 100}], "resale_ticket": false, "event_country": "GB"}],
       "currency": "GBP", "customer_country": "GB", "customer_region": "London", "customer_language":
@@ -20,12 +20,14 @@ interactions:
       User-Agent:
       - python-requests/2.26.0
       date:
-      - Fri, 24 Sep 2021 03:30:17 GMT
+      - Fri, 24 Sep 2021 03:29:20 GMT
+      x-custom-header:
+      - test
     method: POST
     uri: https://api.xcover.com/xcover/partners/LLODT/quotes/
   response:
     body:
-      string: "{\"id\":\"VGU8R-JVDNL-INS\",\"status\":\"RECEIVED\",\"currency\":\"GBP\",\"total_price\":1.99,\"total_price_formatted\":\"\xA31.99\",\"partner_transaction_id\":null,\"created_at\":\"2021-09-24T13:30:18.491325Z\",\"updated_at\":\"2021-09-24T13:30:18.491338Z\",\"pds_url\":\"https://staging.xcover.com/en/pds/VGU8R-JVDNL-INS\",\"security_token\":\"vl3v2-kDBZ9-qzUQb-5wwxi\",\"quotes\":{\"0\":{\"id\":\"12c3b6d7-2784-4f22-9305-f3ab3f30b0f5\",\"policy_start_date\":\"2021-09-25T00:11:11+00:00\",\"policy_end_date\":\"2021-10-15T09:01:28+00:00\",\"status\":\"RECEIVED\",\"price\":1.99,\"price_formatted\":\"\xA31.99\",\"policy\":{\"policy_type\":\"event_ticket_protection\",\"policy_type_group_name\":\"event\",\"policy_name\":\"Missed
+      string: "{\"id\":\"7LPAW-98YNU-INS\",\"status\":\"RECEIVED\",\"currency\":\"GBP\",\"total_price\":1.99,\"total_price_formatted\":\"\xA31.99\",\"partner_transaction_id\":null,\"created_at\":\"2021-09-24T13:29:20.956276Z\",\"updated_at\":\"2021-09-24T13:29:20.956290Z\",\"pds_url\":\"https://staging.xcover.com/en/pds/7LPAW-98YNU-INS\",\"security_token\":\"siJyS-AVS3J-PtlpN-pVJqg\",\"quotes\":{\"0\":{\"id\":\"f75d3f29-0255-40d7-bfc6-5dd04472d5c6\",\"policy_start_date\":\"2021-09-25T12:47:52+00:00\",\"policy_end_date\":\"2021-09-27T00:44:50+00:00\",\"status\":\"RECEIVED\",\"price\":1.99,\"price_formatted\":\"\xA31.99\",\"policy\":{\"policy_type\":\"event_ticket_protection\",\"policy_type_group_name\":\"event\",\"policy_name\":\"Missed
         Event Cover (Generic)\",\"policy_code\":\"MECG0001\",\"policy_version\":\"5d24e2d1-a341-4b8b-9917-82878470a9c3\",\"category\":\"event_ticket_protection\",\"content\":{\"title\":\"Missed
         Event Cover for Ariana Grande\",\"header\":null,\"description\":\"90% of attendees
         add Missed Event Cover for generous protection when things go wrong or your
@@ -35,26 +37,26 @@ interactions:
         Policies are underwritten by Markel International Insurance Company Limited
         which is authorised by the PRA and regulated by the FCA, (No.202570).</p>\"},\"underwriter\":{\"disclaimer\":\"This
         plan is arranged by XCover.com\",\"name\":\"Cover Genius Pty Ltd\"},\"claim_selector_id\":\"\"},\"insured\":null,\"tax\":{\"total_tax\":1.11,\"total_amount_without_tax\":0.88,\"total_tax_formatted\":\"\xA31.11\",\"total_amount_without_tax_formatted\":\"\xA30.88\",\"taxes\":[{\"tax_amount\":1.0,\"tax_code\":\"Admin.
-        fee\",\"tax_amount_formatted\":\"\xA31.00\"},{\"tax_amount\":0.11,\"tax_code\":\"IPT\",\"tax_amount_formatted\":\"\xA30.11\"}]},\"duration\":\"20
-        08:50:17\",\"benefits\":[{\"description\":\"Updated Transalation\",\"limit\":5.3,\"limit_policy_currency\":10.0,\"limit_formatted\":\"\xA35.30\",\"limit_policy_currency_formatted\":\"A$10.00\",\"excess\":2.65,\"excess_policy_currency\":5.0,\"excess_formatted\":\"\xA32.65\",\"excess_policy_currency_formatted\":\"A$5.00\"},{\"description\":\"Updated
+        fee\",\"tax_amount_formatted\":\"\xA31.00\"},{\"tax_amount\":0.11,\"tax_code\":\"IPT\",\"tax_amount_formatted\":\"\xA30.11\"}]},\"duration\":\"1
+        11:56:58\",\"benefits\":[{\"description\":\"Updated Transalation\",\"limit\":5.3,\"limit_policy_currency\":10.0,\"limit_formatted\":\"\xA35.30\",\"limit_policy_currency_formatted\":\"A$10.00\",\"excess\":2.65,\"excess_policy_currency\":5.0,\"excess_formatted\":\"\xA32.65\",\"excess_policy_currency_formatted\":\"A$5.00\"},{\"description\":\"Updated
         Transalation\",\"limit_description\":\"Benefit Text Test 01\",\"excess\":3.18,\"excess_policy_currency\":6.0,\"excess_formatted\":\"\xA33.18\",\"excess_policy_currency_formatted\":\"A$6.00\"},{\"description\":\"Description\",\"limit\":7.95,\"limit_policy_currency\":15.0,\"limit_formatted\":\"\xA37.95\",\"limit_policy_currency_formatted\":\"A$15.00\"},{\"description\":\"Description\",\"limit\":10.6,\"limit_policy_currency\":20.0,\"limit_formatted\":\"\xA310.60\",\"limit_policy_currency_formatted\":\"A$20.00\",\"excess_description\":\"Excess
         Text Test 01\"},{\"description\":\"Description\",\"limit_description\":\"Benefit
-        Text Test 02\",\"excess_description\":\"Excess Text Test 02\"}],\"commission\":{\"partner_commission\":0.0,\"partner_commission_formatted\":\"\xA30.00\",\"surcharge_commission\":0.0,\"surcharge_commission_formatted\":\"\xA30.00\",\"total_commission\":0.0,\"total_commission_formatted\":\"\xA30.00\"},\"created_at\":\"2021-09-24T13:30:18.482718Z\",\"confirmed_at\":null,\"updated_at\":\"2021-09-24T13:30:18.482732Z\",\"cancelled_at\":null,\"is_renewable\":false,\"is_pricebeat_enabled\":null,\"cover_amount\":52.99,\"cover_amount_formatted\":\"\xA352.99\",\"pds_url\":\"https://staging.xcover.com/en/pds/VGU8R-JVDNL-INS?policy_type=event_ticket_protection_v1\",\"attachments\":[],\"files\":[],\"extra_fields\":{},\"surcharge\":{\"total_amount\":null,\"total_amount_formatted\":null,\"surcharges\":null},\"discount_price\":1.99,\"discount_price_formatted\":\"\xA31.99\",\"discount_amount\":0.0,\"discount_amount_formatted\":\"\xA30.00\",\"instalment_plans\":[]}},\"bundle_code\":null,\"bundle_price\":1.99,\"bundle_content\":{},\"bundle_price_formatted\":\"\xA31.99\",\"bundle_discount_percent\":0.0,\"bundle_discount_amount\":0.0,\"bundle_discount_amount_formatted\":\"\xA30.00\",\"errors\":{}}"
+        Text Test 02\",\"excess_description\":\"Excess Text Test 02\"}],\"commission\":{\"partner_commission\":0.0,\"partner_commission_formatted\":\"\xA30.00\",\"surcharge_commission\":0.0,\"surcharge_commission_formatted\":\"\xA30.00\",\"total_commission\":0.0,\"total_commission_formatted\":\"\xA30.00\"},\"created_at\":\"2021-09-24T13:29:20.948852Z\",\"confirmed_at\":null,\"updated_at\":\"2021-09-24T13:29:20.948866Z\",\"cancelled_at\":null,\"is_renewable\":false,\"is_pricebeat_enabled\":null,\"cover_amount\":52.99,\"cover_amount_formatted\":\"\xA352.99\",\"pds_url\":\"https://staging.xcover.com/en/pds/7LPAW-98YNU-INS?policy_type=event_ticket_protection_v1\",\"attachments\":[],\"files\":[],\"extra_fields\":{},\"surcharge\":{\"total_amount\":null,\"total_amount_formatted\":null,\"surcharges\":null},\"discount_price\":1.99,\"discount_price_formatted\":\"\xA31.99\",\"discount_amount\":0.0,\"discount_amount_formatted\":\"\xA30.00\",\"instalment_plans\":[]}},\"bundle_code\":null,\"bundle_price\":1.99,\"bundle_content\":{},\"bundle_price_formatted\":\"\xA31.99\",\"bundle_discount_percent\":0.0,\"bundle_discount_amount\":0.0,\"bundle_discount_amount_formatted\":\"\xA30.00\",\"errors\":{}}"
     headers:
       Allow:
       - GET, POST, DELETE, OPTIONS
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 693c5dd65d886a5c-SYD
+      - 693c5c6ffc5b6a3f-SYD
       Connection:
       - keep-alive
       Content-Length:
-      - '3734'
+      - '3733'
       Content-Type:
       - application/json
       Date:
-      - Fri, 24 Sep 2021 13:30:18 GMT
+      - Fri, 24 Sep 2021 13:29:21 GMT
       Expect-CT:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Referrer-Policy:
