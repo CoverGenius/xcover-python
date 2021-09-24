@@ -29,3 +29,21 @@ jobs:
       - run: poetry run pre-commit run -a
       - run: cp .github-ci.env .env
       - run: poetry run pytest
+
+  publish:
+    if: startsWith(github.event.ref, 'refs/tags')
+    name: publish
+    needs: pytest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+          architecture: x64
+      - run: pip install --upgrade pip
+      - run: pip install poetry
+      - run: poetry build
+      - uses: pypa/gh-action-pypi-publish@master
+        with:
+          password: ${{ secrets.pypi_password }}
