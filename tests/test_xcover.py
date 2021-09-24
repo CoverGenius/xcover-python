@@ -1,11 +1,12 @@
 import pytest
 
+from xcover.exceptions import XCoverHttpException
 from xcover.xcover import XCover
+from .factories import QuotePackageFactory
 
 
 @pytest.mark.vcr
-def test_quote_request():
-    client = XCover()
+def test_call(client: XCover):
     payload = {
         "request": [
             {
@@ -43,16 +44,15 @@ def test_quote_request():
     assert quote["quotes"]["0"]["tax"]["total_tax"] == 1.11
 
 
-def test_config_is_provided():
-    from xcover import XCoverConfig
+@pytest.mark.vcr
+def test_quote(client: XCover):
+    response = client.create_quote(QuotePackageFactory())
 
-    client = XCover(
-        XCoverConfig(  # minimal config
-            base_url="https://api.xcover.com/xcover",
-            partner_code="--PARTNER_CODE--",
-            auth_api_key="--API_KEY--",
-            auth_api_secret="--API_SECRET--",
-        )
-    )
+    assert isinstance(response, dict)
+    assert response["id"] is not None
 
-    assert client.config.auth_config.headers == "(request-target) date"
+
+@pytest.mark.vcr
+def test_quote_422(client: XCover):
+    with pytest.raises(XCoverHttpException) as err:
+        client.create_quote(QuotePackageFactory(policy_version="unknown"))

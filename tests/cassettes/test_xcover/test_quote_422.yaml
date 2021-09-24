@@ -1,0 +1,66 @@
+interactions:
+- request:
+    body: '{"request": [{"policy_type": "event_ticket_protection", "policy_type_version":
+      1, "policy_start_date": "2021-09-24T19:52:27Z", "event_datetime": "2021-10-23T18:13:44Z",
+      "event_name": "Ariana Grande", "event_location": "The O2", "number_of_tickets":
+      2, "tickets": [{"price": 100}], "resale_ticket": false, "event_country": "GB"}],
+      "currency": "GBP", "customer_country": "GB", "customer_region": "London", "customer_language":
+      "en", "policy_version": "unknown"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '459'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Thu, 23 Sep 2021 21:30:58 GMT
+    method: POST
+    uri: https://api.xcover.com/xcover/partners/LLODT/quotes/
+  response:
+    body:
+      string: '{"type":"validation_error","message":"An API error occurred.","errors":{"policy_version":"Unexpected
+        field"}}'
+    headers:
+      Allow:
+      - GET, POST, DELETE, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 693a4f870f7f6a39-SYD
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '109'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 24 Sep 2021 07:31:00 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 422
+      message: Unprocessable Entity
+version: 1
