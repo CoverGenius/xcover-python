@@ -52,3 +52,25 @@ def test_get_quote(client: XCover):
 def test_quote_422(client: XCover):
     with pytest.raises(XCoverHttpException):
         client.create_quote(QuotePackageFactory(policy_version="unknown"))
+
+
+@pytest.mark.vcr
+def test_update_quote(client: XCover):
+    quote = client.create_quote(QuotePackageFactory())
+
+    response = client.update_quote(
+        quote['id'],
+        {
+            "currency": 'AUD',
+            "request": [
+                {
+                    "quote_id": quote['quotes']['0']['id'],
+                    "tickets": [{"price": 50}],
+                }
+            ]
+        }
+    )
+
+    assert isinstance(response, dict)
+    assert response["currency"] == "AUD"
+    assert quote["total_price"] != response["total_price"]
