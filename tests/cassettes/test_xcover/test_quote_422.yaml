@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"request": [{"policy_type": "event_ticket_protection", "policy_type_version":
-      1, "policy_start_date": "2021-09-24T19:52:27Z", "event_datetime": "2021-10-23T18:13:44Z",
+      1, "policy_start_date": "2021-10-01T00:29:29Z", "event_datetime": "2021-10-10T13:44:15Z",
       "event_name": "Ariana Grande", "event_location": "The O2", "number_of_tickets":
       2, "tickets": [{"price": 100}], "resale_ticket": false, "event_country": "GB"}],
       "currency": "GBP", "customer_country": "GB", "customer_region": "London", "customer_language":
@@ -20,7 +20,7 @@ interactions:
       User-Agent:
       - python-requests/2.26.0
       date:
-      - Thu, 23 Sep 2021 21:30:58 GMT
+      - Thu, 30 Sep 2021 02:59:56 GMT
     method: POST
     uri: https://api.xcover.com/xcover/partners/LLODT/quotes/
   response:
@@ -33,7 +33,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 693a4f870f7f6a39-SYD
+      - 696da19ec8f36a2d-SYD
       Connection:
       - keep-alive
       Content-Length:
@@ -41,7 +41,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 24 Sep 2021 07:31:00 GMT
+      - Thu, 30 Sep 2021 12:59:57 GMT
       Expect-CT:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Referrer-Policy:

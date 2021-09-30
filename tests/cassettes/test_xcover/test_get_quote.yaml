@@ -15,44 +15,45 @@ interactions:
       User-Agent:
       - python-requests/2.26.0
       date:
-      - Fri, 24 Sep 2021 00:56:30 GMT
+      - Thu, 30 Sep 2021 02:59:55 GMT
     method: GET
     uri: https://api.xcover.com/xcover/partners/LLODT/quotes/WFJUQ-UDYCA-INS/
   response:
     body:
       string: !!binary |
-        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
+        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
+        AGjJ0PyYDgAA
     headers:
       Allow:
       - GET, PATCH, DELETE, HEAD, OPTIONS
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 693b7c8f6fe016c1-SYD
+      - 696da19b0c1f6a2d-SYD
       Connection:
       - keep-alive
       Content-Encoding:
@@ -60,7 +61,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 24 Sep 2021 10:56:31 GMT
+      - Thu, 30 Sep 2021 12:59:56 GMT
       Expect-CT:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Referrer-Policy:

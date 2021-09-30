@@ -19,6 +19,10 @@ class XCover:
     def session(self):
         return requests.Session()
 
+    @property
+    def partner_code(self):
+        return self.config.partner_code
+
     def call(
         self,
         method: str,
@@ -45,21 +49,26 @@ class XCover:
 
         return response
 
-    @staticmethod
-    def handle_response(response: requests.Response):
+    def call_partner_endpoint(self, method, url, payload=None, **kwargs):
+        full_url = urljoin(f"partners/{self.partner_code}/", url)
+        response = self.call(
+            method,
+            full_url,
+            payload=payload,
+            **kwargs
+        )
+
         if response.status_code == 422:
             raise XCoverHttpException()
 
         return response.json()
 
-    def create_quote(self, payload, params=None):
-        response = self.call(
-            "POST", "partners/LLODT/quotes/", payload=payload, params=params
-        )
+    def create_quote(self, payload, **kwargs):
+        return self.call_partner_endpoint("POST", "quotes/", payload=payload, **kwargs)
 
-        return self.handle_response(response)
+    def get_quote(self, quote_id, **kwargs):
+        return self.call_partner_endpoint("GET", f"quotes/{quote_id}/", **kwargs)
 
-    def get_quote(self, quote_id, params=None):
-        response = self.call("GET", f"partners/LLODT/quotes/{quote_id}/", params=params)
+    def update_quote(self, quote_id, payload, **kwargs):
+        return self.call_partner_endpoint("PATCH", f"quotes/{quote_id}/", payload=payload, **kwargs)
 
-        return self.handle_response(response)
