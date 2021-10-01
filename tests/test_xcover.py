@@ -2,7 +2,7 @@ import pytest
 
 from xcover.exceptions import XCoverHttpException
 from xcover.xcover import XCover
-from .factories import QuotePackageFactory
+from .factories import QuotePackageFactory, QuoteFactory
 
 
 @pytest.mark.vcr
@@ -27,11 +27,11 @@ def test_custom_header(client: XCover):
         method="POST",
         url="partners/LLODT/quotes/",
         payload=QuotePackageFactory(),
-        headers={'x-custom-header': 'test'},
+        headers={"x-custom-header": "test"},
     )
 
-    assert response.request.headers['x-custom-header'] == 'test'
-    assert response.request.headers['content-type'] == 'application/json'
+    assert response.request.headers["x-custom-header"] == "test"
+    assert response.request.headers["content-type"] == "application/json"
 
 
 @pytest.mark.vcr
@@ -59,16 +59,16 @@ def test_update_quote(client: XCover):
     quote = client.create_quote(QuotePackageFactory())
 
     response = client.update_quote(
-        quote['id'],
+        quote["id"],
         {
-            "currency": 'AUD',
+            "currency": "AUD",
             "request": [
                 {
-                    "quote_id": quote['quotes']['0']['id'],
+                    "quote_id": quote["quotes"]["0"]["id"],
                     "tickets": [{"price": 50}],
                 }
-            ]
-        }
+            ],
+        },
     )
 
     assert isinstance(response, dict)
@@ -79,7 +79,24 @@ def test_update_quote(client: XCover):
 @pytest.mark.vcr
 def test_opt_out(client: XCover):
     quote = client.create_quote(QuotePackageFactory())
-    response = client.opt_out(quote['id'])
+    response = client.opt_out(quote["id"])
     assert response is True
-    new_quote = client.get_quote(quote['id'])
-    assert new_quote["status"] == 'OPTED_OUT'
+    new_quote = client.get_quote(quote["id"])
+    assert new_quote["status"] == "OPTED_OUT"
+
+
+@pytest.mark.vcr
+def test_add_quotes(client: XCover):
+    quote = client.create_quote(QuotePackageFactory())
+    response = client.add_quotes(
+        quote["id"],
+        {
+            "request": [
+                QuoteFactory(),
+            ]
+        },
+    )
+    assert isinstance(response, dict)
+
+    new_quote = client.get_quote(quote["id"])
+    assert len(new_quote["quotes"]) == 2

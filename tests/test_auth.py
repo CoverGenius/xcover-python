@@ -40,9 +40,13 @@ def test_date_header_is_not_overridden():
             algorithm=SignatureAlgorithm.HMAC_SHA256,
         )
     )
-    req = requests.Request("GET", "https://api.xcover.com/get", headers={'date': 'Sun, 29 Aug 2021 12:07:26 GMT'}).prepare()
+    req = requests.Request(
+        "GET",
+        "https://api.xcover.com/get",
+        headers={"date": "Sun, 29 Aug 2021 12:07:26 GMT"},
+    ).prepare()
     auth(request=req)
     assert (
-        req.headers["Authorization"] ==
-        'Signature keyId="test_api_key",algorithm="hmac-sha256",headers="date",signature="bfxytCfvFqito27v0%2FKcN1jBJsgnCReimKXdAWwoi0k%3D"'
+        req.headers["Authorization"]
+        == 'Signature keyId="test_api_key",algorithm="hmac-sha256",headers="date",signature="bfxytCfvFqito27v0%2FKcN1jBJsgnCReimKXdAWwoi0k%3D"'
     )

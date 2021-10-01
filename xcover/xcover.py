@@ -50,16 +50,22 @@ class XCover:
         return response
 
     def call_partner_endpoint(self, method, url, payload=None, **kwargs):
+        # Generate full URL
         full_url = urljoin(f"partners/{self.partner_code}/", url)
-        response = self.call(
-            method,
-            full_url,
-            payload=payload,
-            **kwargs
-        )
 
-        if response.status_code == 422:
-            raise XCoverHttpException()
+        # Call server
+        response = self.call(method, full_url, payload=payload, **kwargs)
+
+        # Check response for errors
+        error_msg = None
+        if 400 <= response.status_code < 500:
+            error_msg = f"{response.status_code} Client Error: {response.reason} for url {response.url}"
+
+        elif 500 <= response.status_code < 600:
+            error_msg = f"{response.status_code} Server Error: {response.reason} for url {response.url}"
+
+        if error_msg:
+            raise XCoverHttpException(error_msg)
 
         if response.status_code == 204:
             return True
@@ -73,10 +79,18 @@ class XCover:
         return self.call_partner_endpoint("GET", f"quotes/{quote_id}/", **kwargs)
 
     def update_quote(self, quote_id, payload, **kwargs):
-        return self.call_partner_endpoint("PATCH", f"quotes/{quote_id}/", payload=payload, **kwargs)
+        return self.call_partner_endpoint(
+            "PATCH", f"quotes/{quote_id}/", payload=payload, **kwargs
+        )
 
     def opt_out(self, quote_id, payload=None, **kwargs):
         if payload is None:
             payload = {}
-        return self.call_partner_endpoint("POST", f"bookings/{quote_id}/opt_out", payload=payload, **kwargs)
+        return self.call_partner_endpoint(
+            "POST", f"bookings/{quote_id}/opt_out", payload=payload, **kwargs
+        )
 
+    def add_quotes(self, quote_id, payload, **kwargs):
+        return self.call_partner_endpoint(
+            "POST", f"quotes/{quote_id}/add/", payload=payload, **kwargs
+        )
