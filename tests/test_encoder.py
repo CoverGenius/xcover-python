@@ -1,8 +1,10 @@
-import pytest
-from xcover.encoder import JSONEncoder
 import datetime
 import decimal
 import uuid
+
+import pytest
+
+from xcover.encoder import JSONEncoder
 
 
 @pytest.mark.parametrize(

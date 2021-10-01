@@ -1,6 +1,6 @@
-import factory
-
 from datetime import timezone
+
+import factory
 
 
 class QuoteFactory(factory.DictFactory):

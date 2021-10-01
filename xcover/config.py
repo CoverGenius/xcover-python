@@ -1,10 +1,9 @@
-import os
-from typing import Union, Tuple
 import hashlib
+import os
 from dataclasses import dataclass
 from enum import Enum
-from typing import Callable
-from urllib.parse import urlparse, ParseResult
+from typing import Callable, Tuple, Union
+from urllib.parse import ParseResult, urlparse
 
 from requests import PreparedRequest
 

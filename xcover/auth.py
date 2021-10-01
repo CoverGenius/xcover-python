@@ -2,8 +2,8 @@ import base64
 import hmac
 from urllib.parse import quote
 
-from requests.auth import AuthBase
 from requests import PreparedRequest
+from requests.auth import AuthBase
 
 from .config import AuthConfig
 from .utils import http_date

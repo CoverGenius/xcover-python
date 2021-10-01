@@ -2,7 +2,8 @@ import pytest
 
 from xcover.exceptions import XCoverHttpException
 from xcover.xcover import XCover
-from .factories import QuotePackageFactory, QuoteFactory
+
+from .factories import QuoteFactory, QuotePackageFactory
 
 
 @pytest.mark.vcr
