@@ -61,6 +61,9 @@ class XCover:
         if response.status_code == 422:
             raise XCoverHttpException()
 
+        if response.status_code == 204:
+            return True
+
         return response.json()
 
     def create_quote(self, payload, **kwargs):
@@ -71,4 +74,9 @@ class XCover:
 
     def update_quote(self, quote_id, payload, **kwargs):
         return self.call_partner_endpoint("PATCH", f"quotes/{quote_id}/", payload=payload, **kwargs)
+
+    def opt_out(self, quote_id, payload=None, **kwargs):
+        if payload is None:
+            payload = {}
+        return self.call_partner_endpoint("POST", f"bookings/{quote_id}/opt_out", payload=payload, **kwargs)
 

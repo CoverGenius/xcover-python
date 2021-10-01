@@ -74,3 +74,12 @@ def test_update_quote(client: XCover):
     assert isinstance(response, dict)
     assert response["currency"] == "AUD"
     assert quote["total_price"] != response["total_price"]
+
+
+@pytest.mark.vcr
+def test_opt_out(client: XCover):
+    quote = client.create_quote(QuotePackageFactory())
+    response = client.opt_out(quote['id'])
+    assert response is True
+    new_quote = client.get_quote(quote['id'])
+    assert new_quote["status"] == 'OPTED_OUT'
