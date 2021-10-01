@@ -8,15 +8,15 @@
 
 ---
 
-## Installation 
+## Installation
 
 `xcover-python` is available on PyPI. To install the latest version run:
 
     pip install xcover
 
-or 
+or
 
-    poertry install xcover 
+    poertry install xcover
 
 ## Features
 
@@ -46,13 +46,13 @@ client = XCover(
 
 ### Env variables
 
-Alternatively, it is possible to use env variables. 
+Alternatively, it is possible to use env variables.
 
 The full list of configuration options:
 
-* `XC_BASE_URL` (`XCoverConfig.base_url`): XCover base URL (e.g. `https://api.xcover.com/api/v2/`). 
+* `XC_BASE_URL` (`XCoverConfig.base_url`): XCover base URL (e.g. `https://api.xcover.com/api/v2/`).
 * `XC_PARTNER_CODE` (`XCoverConfig.partner_code`): Partner code (e.g. `LLODT`).
-* `XC_HTTP_TIMEOUT` (`XCoverConfig.http_timeout`): HTTP timeout in seconds. Default value is `10`. 
+* `XC_HTTP_TIMEOUT` (`XCoverConfig.http_timeout`): HTTP timeout in seconds. Default value is `10`.
 * `XC_AUTH_API_KEY` (`XCoverConfig.auth_api_key`): API key to use.
 * `XC_AUTH_API_SECRET` (`XCoverConfig.auth_api_secret`): API secret to use.
 * `XC_AUTH_ALGORITHM` (`XCoverConfig.auth_algorithm`): HMAC encoding algorithm to use. Default is `hmac-sha512`.
