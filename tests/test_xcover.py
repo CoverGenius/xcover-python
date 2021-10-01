@@ -100,3 +100,16 @@ def test_add_quotes(client: XCover):
 
     new_quote = client.get_quote(quote["id"])
     assert len(new_quote["quotes"]) == 2
+
+
+@pytest.mark.vcr
+def test_delete_quotes(client: XCover):
+    quote = client.create_quote(
+        QuotePackageFactory(request=[QuoteFactory(), QuoteFactory()])
+    )
+    response = client.delete_quotes(
+        quote_id=quote["id"], payload={"quotes": [{"id": quote["quotes"]["1"]["id"]}]}
+    )
+    assert isinstance(response, dict)
+    new_quote = client.get_quote(quote["id"])
+    assert len(new_quote["quotes"]) == 1

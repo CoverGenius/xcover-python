@@ -94,3 +94,8 @@ class XCover:
         return self.call_partner_endpoint(
             "POST", f"quotes/{quote_id}/add/", payload=payload, **kwargs
         )
+
+    def delete_quotes(self, quote_id, payload, **kwargs):
+        return self.call_partner_endpoint(
+            "POST", f"quotes/{quote_id}/delete/", payload=payload, **kwargs
+        )
