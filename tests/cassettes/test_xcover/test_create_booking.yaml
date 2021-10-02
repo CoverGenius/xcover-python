@@ -1,0 +1,254 @@
+interactions:
+- request:
+    body: '{"request": [{"policy_type": "event_ticket_protection", "policy_type_version":
+      1, "policy_start_date": "2021-10-02T06:09:19Z", "event_datetime": "2021-10-21T22:46:15Z",
+      "event_name": "Ariana Grande", "event_location": "The O2", "number_of_tickets":
+      2, "tickets": [{"price": 100}], "resale_ticket": false, "event_country": "GB"}],
+      "currency": "GBP", "customer_country": "GB", "customer_region": "London", "customer_language":
+      "en"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '430'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Fri, 01 Oct 2021 15:55:33 GMT
+    method: POST
+    uri: https://api.xcover.com/xcover/partners/LLODT/quotes/
+  response:
+    body:
+      string: "{\"id\":\"MGQQL-T7TF3-INS\",\"status\":\"RECEIVED\",\"currency\":\"GBP\",\"total_price\":2.01,\"total_price_formatted\":\"\xA32.01\",\"partner_transaction_id\":null,\"created_at\":\"2021-10-02T01:55:33.737094Z\",\"updated_at\":\"2021-10-02T01:55:33.737108Z\",\"pds_url\":\"https://staging.xcover.com/en/pds/MGQQL-T7TF3-INS\",\"security_token\":\"qA1kO-zsCus-uUkmN-AAtyR\",\"quotes\":{\"0\":{\"id\":\"02a4f0ca-fab0-405c-b9c7-831f0a1f129f\",\"policy_start_date\":\"2021-10-02T06:09:19+00:00\",\"policy_end_date\":\"2021-10-21T22:46:15+00:00\",\"status\":\"RECEIVED\",\"price\":2.01,\"price_formatted\":\"\xA32.01\",\"policy\":{\"policy_type\":\"event_ticket_protection\",\"policy_type_group_name\":\"event\",\"policy_name\":\"Missed
+        Event Cover (Generic)\",\"policy_code\":\"MECG0001\",\"policy_version\":\"5d24e2d1-a341-4b8b-9917-82878470a9c3\",\"category\":\"event_ticket_protection\",\"content\":{\"title\":\"Missed
+        Event Cover for Ariana Grande\",\"header\":null,\"description\":\"90% of attendees
+        add Missed Event Cover for generous protection when things go wrong or your
+        plans change. For only  per ticket it covers you - and all ticket holders
+        - if:\",\"optout_msg\":\"\",\"disclaimer\":\"<p>This insurance is arranged
+        by Cover Genius Ltd which is authorised and regulated by the FCA (No.750711).
+        Policies are underwritten by Markel International Insurance Company Limited
+        which is authorised by the PRA and regulated by the FCA, (No.202570).</p>\"},\"underwriter\":{\"disclaimer\":\"This
+        plan is arranged by XCover.com\",\"name\":\"Cover Genius Pty Ltd\"},\"claim_selector_id\":\"\"},\"insured\":null,\"tax\":{\"total_tax\":1.11,\"total_amount_without_tax\":0.9,\"total_tax_formatted\":\"\xA31.11\",\"total_amount_without_tax_formatted\":\"\xA30.90\",\"taxes\":[{\"tax_amount\":1.0,\"tax_code\":\"Admin.
+        fee\",\"tax_amount_formatted\":\"\xA31.00\"},{\"tax_amount\":0.11,\"tax_code\":\"IPT\",\"tax_amount_formatted\":\"\xA30.11\"}]},\"duration\":\"19
+        16:36:56\",\"benefits\":[{\"description\":\"Updated Transalation\",\"limit\":5.36,\"limit_policy_currency\":10.0,\"limit_formatted\":\"\xA35.36\",\"limit_policy_currency_formatted\":\"A$10.00\",\"excess\":2.68,\"excess_policy_currency\":5.0,\"excess_formatted\":\"\xA32.68\",\"excess_policy_currency_formatted\":\"A$5.00\"},{\"description\":\"Updated
+        Transalation\",\"limit_description\":\"Benefit Text Test 01\",\"excess\":3.22,\"excess_policy_currency\":6.0,\"excess_formatted\":\"\xA33.22\",\"excess_policy_currency_formatted\":\"A$6.00\"},{\"description\":\"Description\",\"limit\":8.04,\"limit_policy_currency\":15.0,\"limit_formatted\":\"\xA38.04\",\"limit_policy_currency_formatted\":\"A$15.00\"},{\"description\":\"Description\",\"limit\":10.72,\"limit_policy_currency\":20.0,\"limit_formatted\":\"\xA310.72\",\"limit_policy_currency_formatted\":\"A$20.00\",\"excess_description\":\"Excess
+        Text Test 01\"},{\"description\":\"Description\",\"limit_description\":\"Benefit
+        Text Test 02\",\"excess_description\":\"Excess Text Test 02\"}],\"commission\":{\"partner_commission\":0.0,\"partner_commission_formatted\":\"\xA30.00\",\"surcharge_commission\":0.0,\"surcharge_commission_formatted\":\"\xA30.00\",\"total_commission\":0.0,\"total_commission_formatted\":\"\xA30.00\"},\"created_at\":\"2021-10-02T01:55:33.730284Z\",\"confirmed_at\":null,\"updated_at\":\"2021-10-02T01:55:33.730298Z\",\"cancelled_at\":null,\"is_renewable\":false,\"is_pricebeat_enabled\":null,\"cover_amount\":53.62,\"cover_amount_formatted\":\"\xA353.62\",\"pds_url\":\"https://staging.xcover.com/en/pds/MGQQL-T7TF3-INS?policy_type=event_ticket_protection_v1\",\"attachments\":[],\"files\":[],\"extra_fields\":{},\"surcharge\":{\"total_amount\":null,\"total_amount_formatted\":null,\"surcharges\":null},\"discount_price\":2.01,\"discount_price_formatted\":\"\xA32.01\",\"discount_amount\":0.0,\"discount_amount_formatted\":\"\xA30.00\",\"instalment_plans\":[]}},\"bundle_code\":null,\"bundle_price\":2.01,\"bundle_content\":{},\"bundle_price_formatted\":\"\xA32.01\",\"bundle_discount_percent\":0.0,\"bundle_discount_amount\":0.0,\"bundle_discount_amount_formatted\":\"\xA30.00\",\"errors\":{}}"
+    headers:
+      Allow:
+      - GET, POST, DELETE, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 697a4f261cbffd3a-SYD
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3735'
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 02 Oct 2021 01:55:33 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"quotes": [{"id": "02a4f0ca-fab0-405c-b9c7-831f0a1f129f"}], "policyholder":
+      {"first_name": "Mark", "last_name": "Mcintosh", "age": 30, "email": "mark.mcintosh@test-xcover.com",
+      "country": "GB", "region": null, "company": "Barrera Ltd"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '237'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Fri, 01 Oct 2021 15:55:34 GMT
+    method: POST
+    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/MGQQL-T7TF3-INS/
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Allow:
+      - GET, POST, PATCH, HEAD, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 697a4f2a0a5c6a62-SYD
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 02 Oct 2021 01:55:34 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'null'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Fri, 01 Oct 2021 15:55:34 GMT
+    method: GET
+    uri: https://api.xcover.com/xcover/partners/LLODT/quotes/MGQQL-T7TF3-INS/
+  response:
+    body:
+      string: !!binary |
+        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
+        RUX5ReDoqgUAAAD//wMA9pB92rIOAAA=
+    headers:
+      Allow:
+      - GET, PATCH, DELETE, HEAD, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 697a4f2f2eba6a57-SYD
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 02 Oct 2021 01:55:35 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -16,9 +16,7 @@ def test_auth():
 
 def test_auth_unknown_header():
     auth = XCoverAuth(
-        AuthConfig(
-            api_key="test_api_key", api_secret="test_api_secret", headers="unknown"
-        )
+        AuthConfig(api_key="test_api_key", api_secret="test_api_secret", headers="unknown")
     )
     req = requests.Request("GET", "https://api.xcover.com/get").prepare()
     auth(request=req)

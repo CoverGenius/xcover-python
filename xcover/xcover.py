@@ -59,10 +59,14 @@ class XCover:
         # Check response for errors
         error_msg = None
         if 400 <= response.status_code < 500:
-            error_msg = f"{response.status_code} Client Error: {response.reason} for url {response.url}"
+            error_msg = (
+                f"{response.status_code} Client Error: {response.reason} for url {response.url}"
+            )
 
         elif 500 <= response.status_code < 600:
-            error_msg = f"{response.status_code} Server Error: {response.reason} for url {response.url}"
+            error_msg = (
+                f"{response.status_code} Server Error: {response.reason} for url {response.url}"
+            )
 
         if error_msg:
             raise XCoverHttpException(error_msg)
@@ -98,4 +102,9 @@ class XCover:
     def delete_quotes(self, quote_id, payload, **kwargs):
         return self.call_partner_endpoint(
             "POST", f"quotes/{quote_id}/delete/", payload=payload, **kwargs
+        )
+
+    def create_booking(self, quote_id, payload, **kwargs):
+        return self.call_partner_endpoint(
+            "POST", f"bookings/{quote_id}/", payload=payload, **kwargs
         )

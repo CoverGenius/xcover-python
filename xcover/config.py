@@ -38,9 +38,7 @@ class AuthConfig:
         for header in self.headers_as_list:
             if header == "(request-target)":
                 parsed_url: ParseResult = urlparse(request.url)
-                parts.append(
-                    f"(request-target): {request.method.lower()} {parsed_url.path}"
-                )
+                parts.append(f"(request-target): {request.method.lower()} {parsed_url.path}")
             else:
                 try:
                     parts.append(f"{header}: {request.headers[header]}")

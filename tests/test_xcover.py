@@ -3,7 +3,7 @@ import pytest
 from xcover.exceptions import XCoverHttpException
 from xcover.xcover import XCover
 
-from .factories import QuoteFactory, QuotePackageFactory
+from .factories import PolicyholderFactory, QuoteFactory, QuotePackageFactory
 
 
 @pytest.mark.vcr
@@ -105,12 +105,27 @@ def test_add_quotes(client: XCover):
 
 @pytest.mark.vcr
 def test_delete_quotes(client: XCover):
-    quote = client.create_quote(
-        QuotePackageFactory(request=[QuoteFactory(), QuoteFactory()])
-    )
+    quote = client.create_quote(QuotePackageFactory(request=[QuoteFactory(), QuoteFactory()]))
     response = client.delete_quotes(
         quote_id=quote["id"], payload={"quotes": [{"id": quote["quotes"]["1"]["id"]}]}
     )
     assert isinstance(response, dict)
     new_quote = client.get_quote(quote["id"])
     assert len(new_quote["quotes"]) == 1
+
+
+@pytest.mark.vcr
+def test_create_booking(client: XCover):
+    quote = client.create_quote(QuotePackageFactory(request=[QuoteFactory()]))
+    response = client.create_booking(
+        quote_id=quote["id"],
+        payload={
+            "quotes": [{"id": quote["quotes"]["0"]["id"]}],
+            "policyholder": PolicyholderFactory(),
+        },
+    )
+    assert isinstance(response, dict)
+    assert response["status"] == "CONFIRMED"
+    new_quote = client.get_quote(quote["id"])
+    assert len(new_quote["quotes"]) == 1
+    assert new_quote["status"] == "CONFIRMED"
