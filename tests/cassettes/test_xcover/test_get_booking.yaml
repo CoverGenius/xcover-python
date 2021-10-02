@@ -1,0 +1,195 @@
+interactions:
+- request:
+    body: '{"request": [{"policy_type": "event_ticket_protection", "policy_type_version":
+      1, "policy_start_date": "2021-10-02T09:42:40Z", "event_datetime": "2021-10-09T15:47:22Z",
+      "event_name": "Ariana Grande", "event_location": "The O2", "number_of_tickets":
+      2, "tickets": [{"price": 100}], "resale_ticket": false, "event_country": "GB"}],
+      "currency": "GBP", "policyholder": {"first_name": "Mercedes", "last_name": "Barron",
+      "age": 30, "email": "mercedes.barron@test-xcover.com", "country": "GB", "region":
+      null, "company": "Cobb LLC"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '526'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Fri, 01 Oct 2021 16:10:28 GMT
+    method: POST
+    uri: https://api.xcover.com/xcover/partners/LLODT/instant_booking/
+  response:
+    body:
+      string: !!binary |
+        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
+        AAAA//8DACiE1VB0EAAA
+    headers:
+      Allow:
+      - POST, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 697a6503db2d6a45-SYD
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 02 Oct 2021 02:10:29 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'null'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Fri, 01 Oct 2021 16:10:29 GMT
+    method: GET
+    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/ELJHV-UVKB7-INS/
+  response:
+    body:
+      string: !!binary |
+        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
+        Ch8AAA==
+    headers:
+      Allow:
+      - GET, POST, PATCH, HEAD, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 697a65088dcc62eb-SYD
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 02 Oct 2021 02:10:31 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -142,3 +142,12 @@ def test_instant_booking(client: XCover):
     assert isinstance(booking, dict)
     assert booking["status"] == "CONFIRMED"
     assert "-INS" in booking["id"]
+
+
+@pytest.mark.vcr
+def test_get_booking(client: XCover):
+    booking = client.instant_booking(InstantBookingFactory())
+    assert isinstance(booking, dict)
+    new_booking = client.get_booking(booking["id"])
+    assert new_booking["status"] == "CONFIRMED"
+    assert "-INS" in new_booking["id"]

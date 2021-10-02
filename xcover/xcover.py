@@ -111,3 +111,6 @@ class XCover:
 
     def instant_booking(self, payload, **kwargs):
         return self.call_partner_endpoint("POST", "instant_booking/", payload=payload, **kwargs)
+
+    def get_booking(self, booking_id, **kwargs):
+        return self.call_partner_endpoint("GET", f"bookings/{booking_id}/", **kwargs)
