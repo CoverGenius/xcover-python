@@ -34,3 +34,9 @@ class PolicyholderFactory(factory.DictFactory):
     country = "GB"
     region = None
     company = factory.Faker("company")
+
+
+class InstantBookingFactory(factory.DictFactory):
+    request = factory.List([QuoteFactory()])
+    currency = "GBP"
+    policyholder = factory.SubFactory(PolicyholderFactory)

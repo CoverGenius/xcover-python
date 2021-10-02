@@ -1,0 +1,98 @@
+interactions:
+- request:
+    body: '{"request": [{"policy_type": "event_ticket_protection", "policy_type_version":
+      1, "policy_start_date": "2021-10-02T16:00:23Z", "event_datetime": "2021-10-26T14:14:59Z",
+      "event_name": "Ariana Grande", "event_location": "The O2", "number_of_tickets":
+      2, "tickets": [{"price": 100}], "resale_ticket": false, "event_country": "GB"}],
+      "currency": "GBP", "policyholder": {"first_name": "Melanie", "last_name": "Martinez",
+      "age": 30, "email": "melanie.martinez@test-xcover.com", "country": "GB", "region":
+      null, "company": "Smith, Sandoval and Decker"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '546'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Fri, 01 Oct 2021 16:05:42 GMT
+    method: POST
+    uri: https://api.xcover.com/xcover/partners/LLODT/instant_booking/
+  response:
+    body:
+      string: !!binary |
+        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
+        KImdiRAAAA==
+    headers:
+      Allow:
+      - POST, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 697a5e02fe0d6a2a-SYD
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 02 Oct 2021 02:05:43 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 200
+      message: OK
+version: 1
