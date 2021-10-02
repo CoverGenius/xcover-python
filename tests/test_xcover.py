@@ -151,3 +151,10 @@ def test_get_booking(client: XCover):
     new_booking = client.get_booking(booking["id"])
     assert new_booking["status"] == "CONFIRMED"
     assert "-INS" in new_booking["id"]
+
+
+@pytest.mark.vcr
+def test_list_bookings(client: XCover):
+    bookings = client.list_bookings(params={"limit": 1, "offset": 1})
+    assert len(bookings["results"]) == 1
+    assert "?limit=1&offset=2" in bookings["next"]

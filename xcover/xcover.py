@@ -114,3 +114,6 @@ class XCover:
 
     def get_booking(self, booking_id, **kwargs):
         return self.call_partner_endpoint("GET", f"bookings/{booking_id}/", **kwargs)
+
+    def list_bookings(self, **kwargs):
+        return self.call_partner_endpoint("GET", f"bookings/", **kwargs)
