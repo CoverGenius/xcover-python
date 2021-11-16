@@ -1,0 +1,10 @@
+[flake8]
+max-complexity = 10
+max-line-length = 100
+per-file-ignores =
+    # imported but unused
+    __init__.py,conftest.py: F401,F403
+exclude =
+    .git,
+    .venv,
+    __pycache__

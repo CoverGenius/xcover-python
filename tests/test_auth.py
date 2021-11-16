@@ -46,5 +46,6 @@ def test_date_header_is_not_overridden():
     auth(request=req)
     assert (
         req.headers["Authorization"]
-        == 'Signature keyId="test_api_key",algorithm="hmac-sha256",headers="date",signature="bfxytCfvFqito27v0%2FKcN1jBJsgnCReimKXdAWwoi0k%3D"'
+        == 'Signature keyId="test_api_key",algorithm="hmac-sha256",headers="date",'
+        'signature="bfxytCfvFqito27v0%2FKcN1jBJsgnCReimKXdAWwoi0k%3D"'
     )

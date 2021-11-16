@@ -28,7 +28,10 @@ class XCoverAuth(AuthBase):
         ).digest()
 
         signature = quote(base64.b64encode(signature), safe="")
-        auth_header = f'Signature keyId="{api_key}",algorithm="{algorithm}",headers="{headers}",signature="{signature}"'
+        auth_header = (
+            f'Signature keyId="{api_key}",algorithm="{algorithm}",'
+            f'headers="{headers}",signature="{signature}"'
+        )
 
         request.headers["authorization"] = auth_header
 
