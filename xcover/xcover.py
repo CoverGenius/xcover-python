@@ -117,3 +117,10 @@ class XCover:
 
     def list_bookings(self, **kwargs):
         return self.call_partner_endpoint("GET", "bookings/", **kwargs)
+
+    def confirm_booking(self, booking_id, payload=None, **kwargs):
+        if payload is None:
+            payload = {}
+        return self.call_partner_endpoint(
+            "PUT", f"bookings/{booking_id}/confirm", payload=payload, **kwargs
+        )

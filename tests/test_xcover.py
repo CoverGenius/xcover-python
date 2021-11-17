@@ -158,3 +158,21 @@ def test_list_bookings(client: XCover):
     bookings = client.list_bookings(params={"limit": 1, "offset": 1})
     assert len(bookings["results"]) == 1
     assert "?limit=1&offset=2" in bookings["next"]
+
+
+@pytest.mark.vcr
+def test_confirm_booking(client: XCover):
+    quote = client.create_quote(QuotePackageFactory())
+    booking = client.create_booking(
+        quote_id=quote["id"],
+        payload={
+            "quotes": [{"id": quote["quotes"]["0"]["id"]}],
+            "policyholder": PolicyholderFactory(),
+            "require_payment_confirmation": True,
+        },
+    )
+    assert isinstance(booking, dict)
+    assert booking["status"] == "PENDING_PAYMENT"
+
+    confirmed_booking = client.confirm_booking(booking["id"])
+    assert confirmed_booking["status"] == "CONFIRMED"
