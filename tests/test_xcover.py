@@ -198,3 +198,34 @@ def test_trigger_email__wrong_payload(client: XCover):
                 "event": "BOOKING_CANCELLED",
             },
         )
+
+
+@pytest.mark.vcr
+def test_booking_modification(client: XCover):
+    booking = client.instant_booking(InstantBookingFactory())
+    phone = "+380506022279"
+    assert isinstance(booking, dict)
+    resp = client.booking_modification(
+        booking["id"],
+        {
+            "policyholder": {
+                "phone": phone,
+            }
+        },
+    )
+    assert resp["policyholder"]["phone"] == phone
+
+
+@pytest.mark.vcr
+def test_booking_modification__error(client: XCover):
+    booking = client.instant_booking(InstantBookingFactory())
+    assert isinstance(booking, dict)
+    with pytest.raises(XCoverHttpException):
+        client.booking_modification(
+            booking["id"],
+            {
+                "policyholder": {
+                    "phone": "invalid phone format",
+                }
+            },
+        )

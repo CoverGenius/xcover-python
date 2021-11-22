@@ -76,6 +76,7 @@ class XCover:
 
         return response.json()
 
+    # Quotes
     def create_quote(self, payload, **kwargs):
         return self.call_partner_endpoint("POST", "quotes/", payload=payload, **kwargs)
 
@@ -104,6 +105,7 @@ class XCover:
             "POST", f"quotes/{quote_id}/delete/", payload=payload, **kwargs
         )
 
+    # Bookings
     def create_booking(self, quote_id, payload, **kwargs):
         return self.call_partner_endpoint(
             "POST", f"bookings/{quote_id}/", payload=payload, **kwargs
@@ -131,4 +133,10 @@ class XCover:
 
         return self.call_partner_endpoint(
             "POST", f"bookings/{booking_id}/send_email", payload=payload, **kwargs
+        )
+
+    # Mods
+    def booking_modification(self, booking_id, payload, **kwargs):
+        return self.call_partner_endpoint(
+            "PATCH", f"bookings/{booking_id}/", payload=payload, **kwargs
         )

@@ -1,0 +1,186 @@
+interactions:
+- request:
+    body: '{"request": [{"policy_type": "event_ticket_protection", "policy_type_version":
+      1, "policy_start_date": "2021-11-23T03:34:49Z", "event_datetime": "2021-11-24T18:48:22Z",
+      "event_name": "Ariana Grande", "event_location": "The O2", "number_of_tickets":
+      2, "tickets": [{"price": 100}], "resale_ticket": false, "event_country": "GB"}],
+      "currency": "GBP", "policyholder": {"first_name": "Sheri", "last_name": "Davis",
+      "age": 30, "email": "sheri.davis@test-xcover.com", "country": "GB", "region":
+      null, "company": "Tucker, Manning and Evans"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '535'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Mon, 22 Nov 2021 00:45:34 GMT
+    method: POST
+    uri: https://api.xcover.com/xcover/partners/LLODT/instant_booking/
+  response:
+    body:
+      string: !!binary |
+        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
+        I54Cju3/AAAA//8DADA3xTmEEAAA
+    headers:
+      Allow:
+      - POST, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 6b21e98fdd1a6a74-SYD
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 22 Nov 2021 11:45:35 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"policyholder": {"phone": "+380506022279"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '44'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Mon, 22 Nov 2021 00:45:35 GMT
+    method: PATCH
+    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/6M9BQ-3UHTK-INS/
+  response:
+    body:
+      string: !!binary |
+        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
+        OkP75IMn6f8AAAD//wMAsomP1v0QAAA=
+    headers:
+      Allow:
+      - GET, POST, PATCH, HEAD, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 6b21e996fb116a3e-SYD
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 22 Nov 2021 11:45:37 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 200
+      message: OK
+version: 1

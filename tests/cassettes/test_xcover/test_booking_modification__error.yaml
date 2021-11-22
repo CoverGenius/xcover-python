@@ -1,0 +1,155 @@
+interactions:
+- request:
+    body: '{"request": [{"policy_type": "event_ticket_protection", "policy_type_version":
+      1, "policy_start_date": "2021-11-23T00:12:32Z", "event_datetime": "2021-11-26T09:20:05Z",
+      "event_name": "Ariana Grande", "event_location": "The O2", "number_of_tickets":
+      2, "tickets": [{"price": 100}], "resale_ticket": false, "event_country": "GB"}],
+      "currency": "GBP", "policyholder": {"first_name": "Breanna", "last_name": "Carney",
+      "age": 30, "email": "breanna.carney@test-xcover.com", "country": "GB", "region":
+      null, "company": "James and Sons"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '530'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Mon, 22 Nov 2021 00:47:45 GMT
+    method: POST
+    uri: https://api.xcover.com/xcover/partners/LLODT/instant_booking/
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Allow:
+      - POST, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 6b21ecc4eabf16e1-SYD
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 22 Nov 2021 11:47:46 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"policyholder": {"phone": "invalid phone format"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '51'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Mon, 22 Nov 2021 00:47:46 GMT
+    method: PATCH
+    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/MGDNT-P7P6C-INS/
+  response:
+    body:
+      string: '{"type":"validation_error","message":"An API error occurred.","errors":{"policyholder":{"phone":["The
+        phone number should start with \"+\" character"]}}}'
+    headers:
+      Allow:
+      - GET, POST, PATCH, HEAD, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 6b21ecc98a08fe80-SYD
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '153'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 22 Nov 2021 11:47:47 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 422
+      message: Unprocessable Entity
+version: 1
