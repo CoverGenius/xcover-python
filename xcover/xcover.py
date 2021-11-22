@@ -71,7 +71,7 @@ class XCover:
         if error_msg:
             raise XCoverHttpException(error_msg)
 
-        if response.status_code == 204:
+        if response.status_code in (204, 202):
             return True
 
         return response.json()
@@ -123,4 +123,12 @@ class XCover:
             payload = {}
         return self.call_partner_endpoint(
             "PUT", f"bookings/{booking_id}/confirm", payload=payload, **kwargs
+        )
+
+    def trigger_email(self, booking_id, payload=None, **kwargs):
+        if payload is None:
+            payload = {}
+
+        return self.call_partner_endpoint(
+            "POST", f"bookings/{booking_id}/send_email", payload=payload, **kwargs
         )

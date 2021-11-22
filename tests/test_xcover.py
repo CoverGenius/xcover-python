@@ -176,3 +176,25 @@ def test_confirm_booking(client: XCover):
 
     confirmed_booking = client.confirm_booking(booking["id"])
     assert confirmed_booking["status"] == "CONFIRMED"
+
+
+@pytest.mark.vcr
+def test_trigger_email(client: XCover):
+    booking = client.instant_booking(InstantBookingFactory())
+    assert isinstance(booking, dict)
+    resp = client.trigger_email(booking["id"])
+    assert resp
+
+
+@pytest.mark.vcr
+def test_trigger_email__wrong_payload(client: XCover):
+    booking = client.instant_booking(InstantBookingFactory())
+    assert isinstance(booking, dict)
+    with pytest.raises(XCoverHttpException):
+        # Booking is not cancelled
+        client.trigger_email(
+            booking["id"],
+            {
+                "event": "BOOKING_CANCELLED",
+            },
+        )
