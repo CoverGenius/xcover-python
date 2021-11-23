@@ -153,3 +153,23 @@ class XCover:
         return self.call_partner_endpoint(
             "POST", f"bookings/{booking_id}/confirm_update/{update_id}/", payload=payload, **kwargs
         )
+
+    # Cancellations
+    def cancel_booking(self, booking_id, payload=None, **kwargs):
+        if payload is None:
+            payload = {}
+
+        return self.call_partner_endpoint(
+            "POST", f"bookings/{booking_id}/cancel", payload=payload, **kwargs
+        )
+
+    def confirm_booking_cancellation(self, booking_id, cancellation_id, payload=None, **kwargs):
+        if payload is None:
+            payload = {}
+
+        return self.call_partner_endpoint(
+            "POST",
+            f"bookings/{booking_id}/confirm_cancellation/{cancellation_id}/",
+            payload=payload,
+            **kwargs,
+        )

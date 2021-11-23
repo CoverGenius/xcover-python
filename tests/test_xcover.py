@@ -263,3 +263,39 @@ def test_booking_modification_quote_workflow(client: XCover):
     # Ensure that the modification is applied after the modification is confirmed
     get_booking_res_2 = client.get_booking(booking["id"])
     assert mod_quote_resp["total_price"] == get_booking_res_2["total_price"]
+
+
+@pytest.mark.vcr
+def test_cancel_booking(client: XCover):
+    booking = client.instant_booking(InstantBookingFactory())
+    assert isinstance(booking, dict)
+    cancellation_resp = client.cancel_booking(booking["id"])
+    assert isinstance(cancellation_resp, dict)
+    booking = client.get_booking(booking["id"])
+    assert booking["status"] == "CANCELLED"
+
+
+@pytest.mark.vcr
+def test_cancel_booking_with_confirmation(client: XCover):
+    booking = client.instant_booking(InstantBookingFactory())
+    assert isinstance(booking, dict)
+    cancellation_resp = client.cancel_booking(
+        booking["id"],
+        {
+            "preview": True,
+        },
+    )
+    assert isinstance(cancellation_resp, dict)
+    cancellation_id = cancellation_resp["cancellation_id"]
+
+    # Ensure the booking is not cancelled until confirmed
+    get_booking_res = client.get_booking(booking["id"])
+    assert get_booking_res["status"] == "CONFIRMED"
+
+    # Confirm booking cancellation
+    confirm_cancellation_resp = client.confirm_booking_cancellation(booking["id"], cancellation_id)
+    assert confirm_cancellation_resp["status"] == "CANCELLED"
+
+    # Ensure that the cancellation is applied
+    get_booking_res_2 = client.get_booking(booking["id"])
+    assert get_booking_res_2["status"] == "CANCELLED"

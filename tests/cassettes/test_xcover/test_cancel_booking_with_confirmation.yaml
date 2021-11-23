@@ -1,0 +1,473 @@
+interactions:
+- request:
+    body: '{"request": [{"policy_type": "event_ticket_protection", "policy_type_version":
+      1, "policy_start_date": "2021-11-23T10:44:38Z", "event_datetime": "2021-12-15T10:02:38Z",
+      "event_name": "Ariana Grande", "event_location": "The O2", "number_of_tickets":
+      2, "tickets": [{"price": 100}], "resale_ticket": false, "event_country": "GB"}],
+      "currency": "GBP", "policyholder": {"first_name": "Hector", "last_name": "Solis",
+      "age": 30, "email": "hector.solis@test-xcover.com", "country": "GB", "region":
+      null, "company": "Arnold, Thomas and Kaufman"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '538'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Mon, 22 Nov 2021 18:58:46 GMT
+    method: POST
+    uri: https://api.xcover.com/xcover/partners/LLODT/instant_booking/
+  response:
+    body:
+      string: !!binary |
+        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
+        aCbjX/h4+QEAAP//AwD1HA5TihAAAA==
+    headers:
+      Allow:
+      - POST, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 6b282aee087f6a44-SYD
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 23 Nov 2021 05:58:47 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"preview": true}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '17'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Mon, 22 Nov 2021 18:58:47 GMT
+    method: POST
+    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/YJFPH-P38FW-INS/cancel
+  response:
+    body:
+      string: !!binary |
+        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
+        AwAZeMAS1BgAAA==
+    headers:
+      Allow:
+      - POST, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 6b282af2adcf6a27-SYD
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 23 Nov 2021 05:58:47 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'null'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Mon, 22 Nov 2021 18:58:47 GMT
+    method: GET
+    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/YJFPH-P38FW-INS/
+  response:
+    body:
+      string: !!binary |
+        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
+        5+l5lMvLshcQp3w53d4BAAD//wMAabnCJfQfAAA=
+    headers:
+      Allow:
+      - GET, POST, PATCH, HEAD, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 6b282af6dd286a36-SYD
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 23 Nov 2021 05:58:48 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Mon, 22 Nov 2021 18:58:48 GMT
+    method: POST
+    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/YJFPH-P38FW-INS/confirm_cancellation/u7Thv-d6C5P-8FAQW-CCL/
+  response:
+    body:
+      string: !!binary |
+        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
+        UR+M+mDU/zGj3u12fwEAAP//AwAsR5+G2hgAAA==
+    headers:
+      Allow:
+      - POST, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 6b282af9dd015599-SYD
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 23 Nov 2021 05:58:49 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'null'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.26.0
+      date:
+      - Mon, 22 Nov 2021 18:58:49 GMT
+    method: GET
+    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/YJFPH-P38FW-INS/
+  response:
+    body:
+      string: !!binary |
+        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
+        ZnLZ9c8PGCS+/BcAAAD//wMANIrdlAsgAAA=
+    headers:
+      Allow:
+      - GET, POST, PATCH, HEAD, OPTIONS
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 6b282afe1b3c6a48-SYD
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 23 Nov 2021 05:58:49 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '-1'
+      X-Ratelimit-Remaining:
+      - '-1'
+      X-Ratelimit-Reset:
+      - '1568836675'
+    status:
+      code: 200
+      message: OK
+version: 1
