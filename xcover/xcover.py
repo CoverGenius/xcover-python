@@ -140,3 +140,16 @@ class XCover:
         return self.call_partner_endpoint(
             "PATCH", f"bookings/{booking_id}/", payload=payload, **kwargs
         )
+
+    def booking_modification_quote(self, booking_id, payload, **kwargs):
+        return self.call_partner_endpoint(
+            "PATCH", f"bookings/{booking_id}/quote_for_update", payload=payload, **kwargs
+        )
+
+    def confirm_booking_modification(self, booking_id, update_id, payload=None, **kwargs):
+        if payload is None:
+            payload = {}
+
+        return self.call_partner_endpoint(
+            "POST", f"bookings/{booking_id}/confirm_update/{update_id}/", payload=payload, **kwargs
+        )

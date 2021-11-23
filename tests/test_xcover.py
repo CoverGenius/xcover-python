@@ -229,3 +229,37 @@ def test_booking_modification__error(client: XCover):
                 }
             },
         )
+
+
+@pytest.mark.vcr
+def test_booking_modification_quote_workflow(client: XCover):
+    booking = client.instant_booking(InstantBookingFactory())
+    assert isinstance(booking, dict)
+    mod_quote_resp = client.booking_modification_quote(
+        booking["id"],
+        {
+            "quotes": [
+                {
+                    "id": booking["quotes"][0]["id"],
+                    "update_fields": {
+                        "tickets": [{"price": 100500}],
+                    },
+                }
+            ]
+        },
+    )
+    assert booking["total_price"] != mod_quote_resp["total_price"]
+
+    update_id = mod_quote_resp["update_id"]
+
+    # Ensure that the modification is not applied before confirmed
+    get_booking_res = client.get_booking(booking["id"])
+    assert booking["total_price"] == get_booking_res["total_price"]
+
+    # Confirm booking update
+    confirm_mod_resp = client.confirm_booking_modification(booking["id"], update_id)
+    assert confirm_mod_resp["total_price"] == mod_quote_resp["total_price"]
+
+    # Ensure that the modification is applied after the modification is confirmed
+    get_booking_res_2 = client.get_booking(booking["id"])
+    assert mod_quote_resp["total_price"] == get_booking_res_2["total_price"]
