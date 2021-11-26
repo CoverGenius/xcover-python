@@ -299,3 +299,30 @@ def test_cancel_booking_with_confirmation(client: XCover):
     # Ensure that the cancellation is applied
     get_booking_res_2 = client.get_booking(booking["id"])
     assert get_booking_res_2["status"] == "CANCELLED"
+
+
+@pytest.mark.vcr
+@pytest.mark.skip
+def test_quote_for_renewal(client: XCover):
+    # TODO: Finish the test.
+    booking = client.instant_booking(InstantBookingFactory())
+    assert isinstance(booking, dict)
+    client.quote_for_renewal(booking["id"])
+
+
+@pytest.mark.vcr
+@pytest.mark.skip
+def test_renewal_confirmation(client: XCover):
+    # TODO: Finish the test.
+    booking = client.instant_booking(InstantBookingFactory())
+    assert isinstance(booking, dict)
+    client.renewal_confirmation(booking["id"], "renewal_id")
+
+
+@pytest.mark.vcr
+@pytest.mark.skip
+def test_renewal_opt_out(client: XCover):
+    # TODO: Finish the test.
+    booking = client.instant_booking(InstantBookingFactory())
+    assert isinstance(booking, dict)
+    client.renewal_opt_out(booking["id"])

@@ -173,3 +173,37 @@ class XCover:
             payload=payload,
             **kwargs,
         )
+
+    # Renewals
+    def quote_for_renewal(self, booking_id, payload=None, **kwargs):
+        if payload is None:
+            payload = {}
+
+        return self.call_partner_endpoint(
+            "PATCH",
+            f"renewals/{booking_id}/quote_for_renewal/",
+            payload=payload,
+            **kwargs,
+        )
+
+    def renewal_confirmation(self, booking_id, renewal_id, payload=None, **kwargs):
+        if payload is None:
+            payload = {}
+
+        return self.call_partner_endpoint(
+            "POST",
+            f"renewals/{booking_id}/confirm/{renewal_id}/",
+            payload=payload,
+            **kwargs,
+        )
+
+    def renewal_opt_out(self, booking_id, payload=None, **kwargs):
+        if payload is None:
+            payload = {}
+
+        return self.call_partner_endpoint(
+            "POST",
+            f"renewals/{booking_id}/opt_out/",
+            payload=payload,
+            **kwargs,
+        )
