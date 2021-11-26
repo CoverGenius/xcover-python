@@ -326,3 +326,45 @@ def test_renewal_opt_out(client: XCover):
     booking = client.instant_booking(InstantBookingFactory())
     assert isinstance(booking, dict)
     client.renewal_opt_out(booking["id"])
+
+
+@pytest.mark.vcr
+def test_get_instalments(client: XCover):
+    quote = client.create_quote(QuotePackageFactory())
+    quote_0_id = quote["quotes"]["0"]["id"]
+    instalment_plan = quote["quotes"]["0"]["instalment_plans"][0]
+    client.create_booking(
+        quote_id=quote["id"],
+        payload={
+            "quotes": [
+                {
+                    "id": quote_0_id,
+                    "instalment_plan": instalment_plan["name"],
+                }
+            ],
+            "policyholder": PolicyholderFactory(),
+        },
+    )
+
+    assert isinstance(quote, dict)
+
+    instalments = client.get_instalments(quote["id"])
+
+    first_payment = instalments["quotes"][0]["payment_schedule"][0]
+
+    assert (
+        client.update_instalment_payment_status(
+            quote["id"],
+            {
+                "quotes": [
+                    {
+                        "id": quote_0_id,
+                        "payment_attempted_date": first_payment["period_start_date"],
+                        "payment_status": "PAID",
+                        "instalment_number": 1,
+                    }
+                ]
+            },
+        )
+        is True
+    )

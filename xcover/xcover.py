@@ -207,3 +207,19 @@ class XCover:
             payload=payload,
             **kwargs,
         )
+
+    # Instalments
+    def get_instalments(self, booking_id, **kwargs):
+        return self.call_partner_endpoint(
+            "GET",
+            f"bookings/{booking_id}/instalments/",
+            **kwargs,
+        )
+
+    def update_instalment_payment_status(self, booking_id, payload, **kwargs):
+        return self.call_partner_endpoint(
+            "POST",
+            f"bookings/{booking_id}/instalments/",
+            payload=payload,
+            **kwargs,
+        )
