@@ -12,11 +12,11 @@
 
 `xcover-python` is available on PyPI. To install the latest version run:
 
-    pip install xcover
+    pip install xcover-python
 
 or
 
-    poertry install xcover
+    poertry install xcover-python
 
 ## Features
 
