@@ -34,8 +34,13 @@ jobs:
           path: ./coverage.xml
 
   pre-commit:
-    -
-         - run: poetry run pre-commit run -a
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+    - uses: pre-commit/action@v3.0.0
 
   publish:
     if: startsWith(github.event.ref, 'refs/tags')
