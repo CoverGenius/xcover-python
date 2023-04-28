@@ -2,6 +2,9 @@ import pytest
 
 from xcover.exceptions import XCoverHttpException
 from xcover.xcover import XCover
+from unittest.mock import patch
+from requests import Response
+from http import HTTPStatus
 
 from .factories import (
     InstantBookingFactory,
@@ -9,6 +12,7 @@ from .factories import (
     QuoteFactory,
     QuotePackageFactory,
 )
+from .utils import MockResponse
 
 
 @pytest.mark.vcr
@@ -368,3 +372,19 @@ def test_get_instalments(client: XCover):
         )
         is True
     )
+
+
+@patch('xcover.xcover.XCover.call', return_value=MockResponse)
+def test_idempotency_header_added(mock):
+    mock.return_value = MockResponse(HTTPStatus.OK)
+    client = XCover()
+    booking = client.create_booking(
+        quote_id="booking-id",
+        payload={
+            "quotes": [{"id": "quote-id"}],
+            "policyholder": PolicyholderFactory(),
+        },
+    )
+    args, kwargs = mock.call_args
+    assert 'x-idempotency-key' in kwargs['headers']
+    assert len(kwargs['headers']['x-idempotency-key']) > 0

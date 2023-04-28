@@ -1,5 +1,6 @@
 import json
 from urllib.parse import urljoin
+from uuid import uuid4
 
 import requests
 
@@ -54,6 +55,11 @@ class XCover:
         full_url = urljoin(f"partners/{self.partner_code}/", url)
 
         # Call server
+        if method in {"POST", "PUT", "PATCH"}:
+            headers = kwargs.pop('headers', {})
+            headers.setdefault('x-idempotency-key', str(uuid4()))
+            kwargs['headers'] = headers
+
         response = self.call(method, full_url, payload=payload, **kwargs)
 
         # Check response for errors
