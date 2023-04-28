@@ -26,13 +26,16 @@ jobs:
       - run: pip install poetry
       - run: poetry config --local virtualenvs.in-project true
       - run: poetry install
-      - run: poetry run pre-commit run -a
       - run: cp .github-ci.env .env
       - run: poetry run pytest
       - uses: actions/upload-artifact@v2
         with:
           name: coverage-report
           path: ./coverage.xml
+
+  pre-commit:
+    -
+         - run: poetry run pre-commit run -a
 
   publish:
     if: startsWith(github.event.ref, 'refs/tags')
