@@ -56,9 +56,9 @@ class XCover:
 
         # Call server
         if method in {"POST", "PUT", "PATCH"}:
-            headers = kwargs.pop('headers', {})
-            headers.setdefault('x-idempotency-key', str(uuid4()))
-            kwargs['headers'] = headers
+            headers = kwargs.pop("headers", {})
+            headers.setdefault("x-idempotency-key", str(uuid4()))
+            kwargs["headers"] = headers
 
         response = self.call(method, full_url, payload=payload, **kwargs)
 
