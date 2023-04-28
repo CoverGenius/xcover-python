@@ -1,10 +1,10 @@
+from http import HTTPStatus
+from unittest.mock import patch
+
 import pytest
 
 from xcover.exceptions import XCoverHttpException
 from xcover.xcover import XCover
-from unittest.mock import patch
-from requests import Response
-from http import HTTPStatus
 
 from .factories import (
     InstantBookingFactory,
