@@ -375,10 +375,10 @@ def test_get_instalments(client: XCover):
 
 
 @patch('xcover.xcover.XCover.call', return_value=MockResponse)
-def test_idempotency_header_added(mock):
+def test_idempotency_header_added_if_missed(mock):
     mock.return_value = MockResponse(HTTPStatus.OK)
     client = XCover()
-    booking = client.create_booking(
+    client.create_booking(
         quote_id="booking-id",
         payload={
             "quotes": [{"id": "quote-id"}],
@@ -388,3 +388,21 @@ def test_idempotency_header_added(mock):
     args, kwargs = mock.call_args
     assert 'x-idempotency-key' in kwargs['headers']
     assert len(kwargs['headers']['x-idempotency-key']) > 0
+
+
+@patch('xcover.xcover.XCover.call', return_value=MockResponse)
+def test_idempotency_header_added_in_method_call(mock):
+    mock.return_value = MockResponse(HTTPStatus.OK)
+    client = XCover()
+    client.create_booking(
+        quote_id="booking-id",
+        payload={
+            "quotes": [{"id": "quote-id"}],
+            "policyholder": PolicyholderFactory(),
+        },
+        headers={
+            'x-idempotency-key': 'test-key',
+        }
+    )
+    args, kwargs = mock.call_args
+    assert kwargs['headers']['x-idempotency-key'] == 'test-key'
