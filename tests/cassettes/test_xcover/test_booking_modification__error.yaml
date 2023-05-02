@@ -23,7 +23,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 00:47:45 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/instant_booking/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/instant_booking/
   response:
     body:
       string: !!binary |
@@ -111,7 +111,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 00:47:46 GMT
     method: PATCH
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/MGDNT-P7P6C-INS/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/MGDNT-P7P6C-INS/
   response:
     body:
       string: '{"type":"validation_error","message":"An API error occurred.","errors":{"policyholder":{"phone":["The

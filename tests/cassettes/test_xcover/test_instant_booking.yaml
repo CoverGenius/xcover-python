@@ -23,7 +23,7 @@ interactions:
       date:
       - Fri, 01 Oct 2021 16:05:42 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/instant_booking/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/instant_booking/
   response:
     body:
       string: !!binary |

@@ -1,0 +1,127 @@
+interactions:
+- request:
+    body: '{"request": [{"policy_type": "event_ticket_protection", "policy_type_version":
+      1, "policy_start_date": "2023-05-01T12:16:02Z", "event_datetime": "2023-05-05T06:20:41Z",
+      "event_name": "Ariana Grande", "event_location": "The O2", "number_of_tickets":
+      2, "tickets": [{"price": 100}], "resale_ticket": false, "event_country": "GB"}],
+      "currency": "GBP", "policyholder": {"first_name": "Emily", "last_name": "Sharp",
+      "age": 30, "email": "emily.sharp@test-xcover.com", "country": "GB", "region":
+      null, "company": "Graves LLC"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '520'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.2
+      date:
+      - Sun, 30 Apr 2023 19:28:48 GMT
+      x-idempotency-key:
+      - b4770b89-e6e3-4934-8c57-b39bdbb81e78
+    method: POST
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/instant_booking/
+  response:
+    body:
+      string: '{}'
+    headers:
+      Allow:
+      - POST, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 May 2023 05:28:50 GMT
+    status:
+      code: 502
+      message: Bad Gateway
+- request:
+    body: '{"request": [{"policy_type": "event_ticket_protection", "policy_type_version":
+      1, "policy_start_date": "2023-05-01T16:59:16Z", "event_datetime": "2023-05-09T14:14:15Z",
+      "event_name": "Ariana Grande", "event_location": "The O2", "number_of_tickets":
+      2, "tickets": [{"price": 100}], "resale_ticket": false, "event_country": "GB"}],
+      "currency": "GBP", "policyholder": {"first_name": "Hayden", "last_name": "Simpson",
+      "age": 30, "email": "hayden.simpson@test-xcover.com", "country": "GB", "region":
+      null, "company": "Park LLC"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '524'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.2
+      date:
+      - Sun, 30 Apr 2023 19:30:28 GMT
+      x-idempotency-key:
+      - b4770b89-e6e3-4934-8c57-b39bdbb81e78
+    method: POST
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/instant_booking/
+  response:
+    body:
+      string: '{}'
+    headers:
+      Allow:
+      - POST, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 May 2023 05:28:50 GMT
+    status:
+      code: 502
+      message: Bad Gateway
+- request:
+    body: '{"request": [{"policy_type": "event_ticket_protection", "policy_type_version":
+      1, "policy_start_date": "2023-05-01T08:29:46Z", "event_datetime": "2023-05-14T17:23:29Z",
+      "event_name": "Ariana Grande", "event_location": "The O2", "number_of_tickets":
+      2, "tickets": [{"price": 100}], "resale_ticket": false, "event_country": "GB"}],
+      "currency": "GBP", "policyholder": {"first_name": "Tracy", "last_name": "Smith",
+      "age": 30, "email": "tracy.smith@test-xcover.com", "country": "GB", "region":
+      null, "company": "Sawyer LLC"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '520'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.2
+      date:
+      - Sun, 30 Apr 2023 19:36:08 GMT
+      x-idempotency-key:
+      - 618f49d2-d3f6-4aea-bac2-51241c8f43e6
+    method: POST
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/instant_booking/
+  response:
+    body:
+      string: '{}'
+    headers:
+      Allow:
+      - POST, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 May 2023 05:28:50 GMT
+    status:
+      code: 502
+      message: Bad Gateway

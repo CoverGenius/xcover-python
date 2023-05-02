@@ -3,6 +3,7 @@ from unittest.mock import patch
 
 import pytest
 
+from xcover import XCoverConfig
 from xcover.exceptions import XCoverHttpException
 from xcover.xcover import XCover
 
@@ -406,3 +407,14 @@ def test_idempotency_header_added_in_method_call(mock):
     )
     args, kwargs = mock.call_args
     assert kwargs["headers"]["x-idempotency-key"] == "test-key"
+
+
+@pytest.mark.vcr
+def test_auto_retry():
+    config = XCoverConfig()
+    config.retry_total = 2
+    config.backoff_factor = 1
+    client = XCover(config=config)
+
+    with pytest.raises(XCoverHttpException):
+        client.instant_booking(InstantBookingFactory())

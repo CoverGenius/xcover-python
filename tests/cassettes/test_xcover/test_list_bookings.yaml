@@ -17,7 +17,7 @@ interactions:
       date:
       - Sat, 02 Oct 2021 01:16:35 GMT
     method: GET
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/?limit=1&offset=1
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/?limit=1&offset=1
   response:
     body:
       string: !!binary |

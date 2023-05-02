@@ -28,6 +28,7 @@ factory-boy = "^3.2.1"
 pytest-cov = "^4.0.0"
 coverage = {version = "^7.2.3", extras = ["toml"]}
 
+
 [tool.black]
 line-length = 99
 

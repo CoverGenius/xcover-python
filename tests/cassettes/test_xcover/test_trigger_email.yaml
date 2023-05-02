@@ -23,7 +23,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 00:33:29 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/instant_booking/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/instant_booking/
   response:
     body:
       string: !!binary |
@@ -112,7 +112,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 00:33:30 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/BGNJF-49BDW-INS/send_email
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/BGNJF-49BDW-INS/send_email
   response:
     body:
       string: ''

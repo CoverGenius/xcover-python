@@ -23,7 +23,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 16:47:37 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/instant_booking/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/instant_booking/
   response:
     body:
       string: !!binary |
@@ -113,7 +113,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 16:47:38 GMT
     method: PATCH
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/C3V64-7PBUD-INS/quote_for_update
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/C3V64-7PBUD-INS/quote_for_update
   response:
     body:
       string: !!binary |
@@ -202,7 +202,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 16:47:38 GMT
     method: GET
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/C3V64-7PBUD-INS/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/C3V64-7PBUD-INS/
   response:
     body:
       string: !!binary |
@@ -300,7 +300,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 16:47:39 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/C3V64-7PBUD-INS/confirm_update/joaiJ-Cao42-o9ulM-UPD/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/C3V64-7PBUD-INS/confirm_update/joaiJ-Cao42-o9ulM-UPD/
   response:
     body:
       string: "{\"id\":\"C3V64-7PBUD-INS\",\"status\":\"CONFIRMED\",\"currency\":\"GBP\",\"total_price\":10.79,\"total_price_formatted\":\"\xA310.79\",\"partner_transaction_id\":null,\"created_at\":\"2021-11-23T03:47:37.571373Z\",\"updated_at\":\"2021-11-23T03:47:39.908316Z\",\"pds_url\":\"https://staging.xcover.com/en/pds/C3V64-7PBUD-INS\",\"security_token\":\"59VCz-ffepb-LuNzv-52EAJ\",\"quotes\":[{\"id\":\"e056d82f-7b7e-4327-b027-1063b09a055d\",\"policy_start_date\":\"2021-11-23T08:55:41+00:00\",\"policy_end_date\":\"2021-12-19T14:51:45+00:00\",\"status\":\"CONFIRMED\",\"price\":10.79,\"price_formatted\":\"\xA310.79\",\"policy\":{\"policy_type\":\"event_ticket_protection\",\"policy_type_group_name\":\"event\",\"policy_name\":\"Missed
@@ -373,7 +373,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 16:47:40 GMT
     method: GET
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/C3V64-7PBUD-INS/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/C3V64-7PBUD-INS/
   response:
     body:
       string: !!binary |
