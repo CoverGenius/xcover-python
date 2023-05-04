@@ -24,7 +24,7 @@ class XCover:
         session = requests.Session()
         retries = Retry(
             total=self.config.retry_total,
-            backoff_factor=self.config.backoff_factor,
+            backoff_factor=self.config.retry_backoff_factor,
             status_forcelist={429, 502, 503, 504},
             allowed_methods={"HEAD", "GET", "OPTIONS", "POST", "PUT", "PATCH", "DELETE"},
             respect_retry_after_header=True,
@@ -134,14 +134,14 @@ class XCover:
         )
 
     # Bookings
-    def create_booking(self, quote_id, payload, **kwargs):
+    def create_booking(self, quote_id, payload, auto_retry=True, **kwargs):
         return self.call_partner_endpoint(
-            "POST", f"bookings/{quote_id}/", auto_retry=True, payload=payload, **kwargs
+            "POST", f"bookings/{quote_id}/", auto_retry=auto_retry, payload=payload, **kwargs
         )
 
-    def instant_booking(self, payload, **kwargs):
+    def instant_booking(self, payload, auto_retry=True, **kwargs):
         return self.call_partner_endpoint(
-            "POST", "instant_booking/", payload=payload, auto_retry=True, **kwargs
+            "POST", "instant_booking/", payload=payload, auto_retry=auto_retry, **kwargs
         )
 
     def get_booking(self, booking_id, **kwargs):
@@ -150,25 +150,33 @@ class XCover:
     def list_bookings(self, **kwargs):
         return self.call_partner_endpoint("GET", "bookings/", **kwargs)
 
-    def confirm_booking(self, booking_id, payload=None, **kwargs):
+    def confirm_booking(self, booking_id, payload=None, auto_retry=True, **kwargs):
         if payload is None:
             payload = {}
         return self.call_partner_endpoint(
-            "PUT", f"bookings/{booking_id}/confirm", payload=payload, auto_retry=True, **kwargs
+            "PUT",
+            f"bookings/{booking_id}/confirm",
+            payload=payload,
+            auto_retry=auto_retry,
+            **kwargs,
         )
 
-    def trigger_email(self, booking_id, payload=None, **kwargs):
+    def trigger_email(self, booking_id, payload=None, auto_retry=True, **kwargs):
         if payload is None:
             payload = {}
 
         return self.call_partner_endpoint(
-            "POST", f"bookings/{booking_id}/send_email", payload=payload, auto_retry=True, **kwargs
+            "POST",
+            f"bookings/{booking_id}/send_email",
+            payload=payload,
+            auto_retry=auto_retry,
+            **kwargs,
         )
 
     # Mods
-    def booking_modification(self, booking_id, payload, **kwargs):
+    def booking_modification(self, booking_id, payload, auto_retry=True, **kwargs):
         return self.call_partner_endpoint(
-            "PATCH", f"bookings/{booking_id}/", payload=payload, auto_retry=True, **kwargs
+            "PATCH", f"bookings/{booking_id}/", payload=payload, auto_retry=auto_retry, **kwargs
         )
 
     def booking_modification_quote(self, booking_id, payload, **kwargs):
@@ -176,7 +184,9 @@ class XCover:
             "PATCH", f"bookings/{booking_id}/quote_for_update", payload=payload, **kwargs
         )
 
-    def confirm_booking_modification(self, booking_id, update_id, payload=None, **kwargs):
+    def confirm_booking_modification(
+        self, booking_id, update_id, payload=None, auto_retry=True, **kwargs
+    ):
         if payload is None:
             payload = {}
 
@@ -184,7 +194,7 @@ class XCover:
             "POST",
             f"bookings/{booking_id}/confirm_update/{update_id}/",
             payload=payload,
-            auto_retry=True,
+            auto_retry=auto_retry,
             **kwargs,
         )
 
@@ -197,7 +207,9 @@ class XCover:
             "POST", f"bookings/{booking_id}/cancel", payload=payload, auto_retry=True, **kwargs
         )
 
-    def confirm_booking_cancellation(self, booking_id, cancellation_id, payload=None, **kwargs):
+    def confirm_booking_cancellation(
+        self, booking_id, cancellation_id, payload=None, auto_retry=True, **kwargs
+    ):
         if payload is None:
             payload = {}
 
@@ -205,7 +217,7 @@ class XCover:
             "POST",
             f"bookings/{booking_id}/confirm_cancellation/{cancellation_id}/",
             payload=payload,
-            auto_retry=True,
+            auto_retry=auto_retry,
             **kwargs,
         )
 
@@ -221,7 +233,9 @@ class XCover:
             **kwargs,
         )
 
-    def renewal_confirmation(self, booking_id, renewal_id, payload=None, **kwargs):
+    def renewal_confirmation(
+        self, booking_id, renewal_id, payload=None, auto_retry=True, **kwargs
+    ):
         if payload is None:
             payload = {}
 
@@ -229,11 +243,11 @@ class XCover:
             "POST",
             f"renewals/{booking_id}/confirm/{renewal_id}/",
             payload=payload,
-            auto_retry=True,
+            auto_retry=auto_retry,
             **kwargs,
         )
 
-    def renewal_opt_out(self, booking_id, payload=None, **kwargs):
+    def renewal_opt_out(self, booking_id, payload=None, auto_retry=True, **kwargs):
         if payload is None:
             payload = {}
 
@@ -241,7 +255,7 @@ class XCover:
             "POST",
             f"renewals/{booking_id}/opt_out/",
             payload=payload,
-            auto_retry=True,
+            auto_retry=auto_retry,
             **kwargs,
         )
 
@@ -253,11 +267,11 @@ class XCover:
             **kwargs,
         )
 
-    def update_instalment_payment_status(self, booking_id, payload, **kwargs):
+    def update_instalment_payment_status(self, booking_id, payload, auto_retry=True, **kwargs):
         return self.call_partner_endpoint(
             "POST",
             f"bookings/{booking_id}/instalments/",
             payload=payload,
-            auto_retry=True,
+            auto_retry=auto_retry,
             **kwargs,
         )

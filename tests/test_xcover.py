@@ -413,7 +413,7 @@ def test_idempotency_header_added_in_method_call(mock):
 def test_auto_retry():
     config = XCoverConfig()
     config.retry_total = 2
-    config.backoff_factor = 1
+    config.retry_backoff_factor = 1
     client = XCover(config=config)
 
     with pytest.raises(XCoverHttpException):

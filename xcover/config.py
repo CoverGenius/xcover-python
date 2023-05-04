@@ -62,7 +62,7 @@ class XCoverConfig:
     auth_algorithm: str = env("XC_AUTH_ALGORITHM")
     headers: str = env("XC_AUTH_HEADERS", "(request-target) date")
     retry_total: int = int(env("XC_RETRY_TOTAL", 5))
-    backoff_factor: int = int(env("XC_BACKOFF_FACTOR", 2))
+    retry_backoff_factor: int = int(env("XC_RETRY_BACKOFF_FACTOR", 2))
 
     @property
     def auth_config(self):

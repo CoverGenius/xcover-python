@@ -57,6 +57,8 @@ The full list of configuration options:
 * `XC_AUTH_API_SECRET` (`XCoverConfig.auth_api_secret`): API secret to use.
 * `XC_AUTH_ALGORITHM` (`XCoverConfig.auth_algorithm`): HMAC encoding algorithm to use. Default is `hmac-sha512`.
 * `XC_AUTH_HEADERS` (`XCoverConfig.auth_headers`): Headers to sign. Default is `(request-target) date`.
+* `XC_RETRY_TOTAL` (`XCoverConfig.retry_total`): Total number of retries. Default is `5`.
+* `XC_RETRY_BACKOFF_FACTOR` (`XCoverConfig.retry_backoff_factor`): Backoff factor for retries timeout. Default is `2`.
 
 ## Usage example
 
@@ -103,3 +105,12 @@ response: requests.Response = client.call(
 quote = response.json()
 print(quote)
 ```
+
+### Retries
+
+This client will automatically retry certain operations when it is considered safe to do this.
+The retry number and intervals could be controlled via XC_RETRY_TOTAL and XC_RETRY_BACKOFF_FACTOR
+environment variables ot the same config options.
+
+Auto retry logic can be enabled/disabled per operation. However, further fine-tuning is possible
+via extending XCover class if required.
