@@ -69,12 +69,14 @@ class XCover:
 
         return response
 
-    def call_partner_endpoint(self, method, url, payload=None, **kwargs):
+    def call_partner_endpoint(
+        self, method, url, payload=None, generate_idepmotency_key=True, **kwargs
+    ):
         # Generate full URL
         full_url = urljoin(f"partners/{self.partner_code}/", url)
 
         # Call server
-        if method in {"POST", "PUT", "PATCH"}:
+        if method in {"POST", "PUT", "PATCH"} and generate_idepmotency_key:
             headers = kwargs.pop("headers", {})
             headers.setdefault("x-idempotency-key", str(uuid4()))
             kwargs["headers"] = headers
@@ -106,7 +108,9 @@ class XCover:
 
     # Quotes
     def create_quote(self, payload, **kwargs):
-        return self.call_partner_endpoint("POST", "quotes/", payload=payload, **kwargs)
+        return self.call_partner_endpoint(
+            "POST", "quotes/", payload=payload, generate_idepmotency_key=False, **kwargs
+        )
 
     def get_quote(self, quote_id, **kwargs):
         return self.call_partner_endpoint("GET", f"quotes/{quote_id}/", **kwargs)
