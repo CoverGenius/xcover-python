@@ -1,12 +1,12 @@
 repos:
 
 - repo: https://github.com/ambv/black
-  rev: 21.10b0
+  rev: 23.3.0
   hooks:
   - id: black
 
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.0.1
+  rev: v4.4.0
   hooks:
   - id: check-ast
   - id: trailing-whitespace
@@ -14,18 +14,13 @@ repos:
   - id: end-of-file-fixer
     exclude: '.bumpversion.cfg'
 
-- repo: https://github.com/asottile/seed-isort-config
-  rev: v2.2.0
-  hooks:
-  - id: seed-isort-config
-
 - repo: https://github.com/pre-commit/mirrors-isort
-  rev: v5.9.3
+  rev: v5.10.1
   hooks:
   - id: isort
 
 - repo: https://github.com/PyCQA/flake8
-  rev: 3.9.1
+  rev: 6.0.0
   hooks:
   - id: flake8
     additional_dependencies: [flake8-bugbear, flake8-comprehensions , flake8-tuple]

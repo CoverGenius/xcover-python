@@ -1,5 +1,9 @@
+from http import HTTPStatus
+from unittest.mock import patch
+
 import pytest
 
+from xcover import XCoverConfig
 from xcover.exceptions import XCoverHttpException
 from xcover.xcover import XCover
 
@@ -9,6 +13,7 @@ from .factories import (
     QuoteFactory,
     QuotePackageFactory,
 )
+from .utils import MockResponse
 
 
 @pytest.mark.vcr
@@ -368,3 +373,48 @@ def test_get_instalments(client: XCover):
         )
         is True
     )
+
+
+@patch("xcover.xcover.XCover.call", return_value=MockResponse)
+def test_idempotency_header_added_if_missed(mock):
+    mock.return_value = MockResponse(HTTPStatus.OK)
+    client = XCover()
+    client.create_booking(
+        quote_id="booking-id",
+        payload={
+            "quotes": [{"id": "quote-id"}],
+            "policyholder": PolicyholderFactory(),
+        },
+    )
+    args, kwargs = mock.call_args
+    assert "x-idempotency-key" in kwargs["headers"]
+    assert len(kwargs["headers"]["x-idempotency-key"]) > 0
+
+
+@patch("xcover.xcover.XCover.call", return_value=MockResponse)
+def test_idempotency_header_added_in_method_call(mock):
+    mock.return_value = MockResponse(HTTPStatus.OK)
+    client = XCover()
+    client.create_booking(
+        quote_id="booking-id",
+        payload={
+            "quotes": [{"id": "quote-id"}],
+            "policyholder": PolicyholderFactory(),
+        },
+        headers={
+            "x-idempotency-key": "test-key",
+        },
+    )
+    args, kwargs = mock.call_args
+    assert kwargs["headers"]["x-idempotency-key"] == "test-key"
+
+
+@pytest.mark.vcr
+def test_auto_retry():
+    config = XCoverConfig()
+    config.retry_total = 2
+    config.retry_backoff_factor = 1
+    client = XCover(config=config)
+
+    with pytest.raises(XCoverHttpException):
+        client.instant_booking(InstantBookingFactory())

@@ -56,11 +56,13 @@ class AuthConfig:
 class XCoverConfig:
     partner_code: str = env("XC_PARTNER_CODE")
     base_url: str = env("XC_BASE_URL")
-    http_timeout: Union[float, Tuple[float, float]] = float(env("XC_HTTP_TIMEOUT", 10))
+    http_timeout: Union[float, Tuple[float, float]] = float(env("XC_HTTP_TIMEOUT", 60))
     auth_api_key: str = env("XC_AUTH_API_KEY")
     auth_api_secret: str = env("XC_AUTH_API_SECRET")
     auth_algorithm: str = env("XC_AUTH_ALGORITHM")
     headers: str = env("XC_AUTH_HEADERS", "(request-target) date")
+    retry_total: int = int(env("XC_RETRY_TOTAL", 5))
+    retry_backoff_factor: int = int(env("XC_RETRY_BACKOFF_FACTOR", 2))
 
     @property
     def auth_config(self):

@@ -17,7 +17,7 @@ interactions:
       date:
       - Thu, 30 Sep 2021 02:59:55 GMT
     method: GET
-    uri: https://api.xcover.com/xcover/partners/LLODT/quotes/WFJUQ-UDYCA-INS/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/quotes/WFJUQ-UDYCA-INS/
   response:
     body:
       string: !!binary |

@@ -22,7 +22,7 @@ interactions:
       date:
       - Fri, 01 Oct 2021 15:55:33 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/quotes/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/quotes/
   response:
     body:
       string: "{\"id\":\"MGQQL-T7TF3-INS\",\"status\":\"RECEIVED\",\"currency\":\"GBP\",\"total_price\":2.01,\"total_price_formatted\":\"\xA32.01\",\"partner_transaction_id\":null,\"created_at\":\"2021-10-02T01:55:33.737094Z\",\"updated_at\":\"2021-10-02T01:55:33.737108Z\",\"pds_url\":\"https://staging.xcover.com/en/pds/MGQQL-T7TF3-INS\",\"security_token\":\"qA1kO-zsCus-uUkmN-AAtyR\",\"quotes\":{\"0\":{\"id\":\"02a4f0ca-fab0-405c-b9c7-831f0a1f129f\",\"policy_start_date\":\"2021-10-02T06:09:19+00:00\",\"policy_end_date\":\"2021-10-21T22:46:15+00:00\",\"status\":\"RECEIVED\",\"price\":2.01,\"price_formatted\":\"\xA32.01\",\"policy\":{\"policy_type\":\"event_ticket_protection\",\"policy_type_group_name\":\"event\",\"policy_name\":\"Missed
@@ -96,7 +96,7 @@ interactions:
       date:
       - Fri, 01 Oct 2021 15:55:34 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/MGQQL-T7TF3-INS/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/MGQQL-T7TF3-INS/
   response:
     body:
       string: !!binary |
@@ -184,7 +184,7 @@ interactions:
       date:
       - Fri, 01 Oct 2021 15:55:34 GMT
     method: GET
-    uri: https://api.xcover.com/xcover/partners/LLODT/quotes/MGQQL-T7TF3-INS/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/quotes/MGQQL-T7TF3-INS/
   response:
     body:
       string: !!binary |

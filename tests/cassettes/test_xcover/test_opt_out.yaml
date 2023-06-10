@@ -22,7 +22,7 @@ interactions:
       date:
       - Thu, 30 Sep 2021 20:34:53 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/quotes/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/quotes/
   response:
     body:
       string: "{\"id\":\"PYWUR-TAPHT-INS\",\"status\":\"RECEIVED\",\"currency\":\"GBP\",\"total_price\":2.01,\"total_price_formatted\":\"\xA32.01\",\"partner_transaction_id\":null,\"created_at\":\"2021-10-01T06:34:53.937708Z\",\"updated_at\":\"2021-10-01T06:34:53.937723Z\",\"pds_url\":\"https://staging.xcover.com/en/pds/PYWUR-TAPHT-INS\",\"security_token\":\"iH1w8-bSWnL-xd6SC-8icSM\",\"quotes\":{\"0\":{\"id\":\"e4cc278f-76db-423a-8365-b71aa4dd5c35\",\"policy_start_date\":\"2021-10-02T00:03:25+00:00\",\"policy_end_date\":\"2021-10-18T19:43:15+00:00\",\"status\":\"RECEIVED\",\"price\":2.01,\"price_formatted\":\"\xA32.01\",\"policy\":{\"policy_type\":\"event_ticket_protection\",\"policy_type_group_name\":\"event\",\"policy_name\":\"Missed
@@ -94,7 +94,7 @@ interactions:
       date:
       - Thu, 30 Sep 2021 20:34:53 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/PYWUR-TAPHT-INS/opt_out
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/PYWUR-TAPHT-INS/opt_out
   response:
     body:
       string: ''
@@ -148,7 +148,7 @@ interactions:
       date:
       - Thu, 30 Sep 2021 20:34:54 GMT
     method: GET
-    uri: https://api.xcover.com/xcover/partners/LLODT/quotes/PYWUR-TAPHT-INS/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/quotes/PYWUR-TAPHT-INS/
   response:
     body:
       string: !!binary |

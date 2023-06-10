@@ -26,7 +26,7 @@ interactions:
       date:
       - Fri, 01 Oct 2021 12:24:35 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/quotes/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/quotes/
   response:
     body:
       string: "{\"id\":\"8HGMX-3XNAP-INS\",\"status\":\"RECEIVED\",\"currency\":\"GBP\",\"total_price\":4.02,\"total_price_formatted\":\"\xA34.02\",\"partner_transaction_id\":null,\"created_at\":\"2021-10-01T22:24:36.111685Z\",\"updated_at\":\"2021-10-01T22:24:36.111705Z\",\"pds_url\":\"https://staging.xcover.com/en/pds/8HGMX-3XNAP-INS\",\"security_token\":\"EPVV7-FdOB2-V1EWN-lMRnB\",\"quotes\":{\"0\":{\"id\":\"5f09d2a2-5f9f-4f90-b2a7-02ee82dacfa7\",\"policy_start_date\":\"2021-10-02T02:35:43+00:00\",\"policy_end_date\":\"2021-10-09T18:21:47+00:00\",\"status\":\"RECEIVED\",\"price\":2.01,\"price_formatted\":\"\xA32.01\",\"policy\":{\"policy_type\":\"event_ticket_protection\",\"policy_type_group_name\":\"event\",\"policy_name\":\"Missed
@@ -112,7 +112,7 @@ interactions:
       date:
       - Fri, 01 Oct 2021 12:24:36 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/quotes/8HGMX-3XNAP-INS/delete/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/quotes/8HGMX-3XNAP-INS/delete/
   response:
     body:
       string: !!binary |
@@ -197,7 +197,7 @@ interactions:
       date:
       - Fri, 01 Oct 2021 12:24:37 GMT
     method: GET
-    uri: https://api.xcover.com/xcover/partners/LLODT/quotes/8HGMX-3XNAP-INS/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/quotes/8HGMX-3XNAP-INS/
   response:
     body:
       string: !!binary |

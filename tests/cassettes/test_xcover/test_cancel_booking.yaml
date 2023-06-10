@@ -23,7 +23,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 18:50:19 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/instant_booking/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/instant_booking/
   response:
     body:
       string: !!binary |
@@ -111,7 +111,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 18:50:20 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/JAU96-NGWL7-INS/cancel
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/JAU96-NGWL7-INS/cancel
   response:
     body:
       string: !!binary |
@@ -200,7 +200,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 18:50:20 GMT
     method: GET
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/JAU96-NGWL7-INS/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/JAU96-NGWL7-INS/
   response:
     body:
       string: !!binary |

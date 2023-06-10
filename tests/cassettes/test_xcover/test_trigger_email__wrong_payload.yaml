@@ -23,7 +23,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 00:37:33 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/instant_booking/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/instant_booking/
   response:
     body:
       string: !!binary |
@@ -111,7 +111,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 00:37:34 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/RUUM4-Q7TJ4-INS/send_email
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/RUUM4-Q7TJ4-INS/send_email
   response:
     body:
       string: '{"type":"validation_error","message":"An API error occurred.","errors":["BOOKING_CANCELLED

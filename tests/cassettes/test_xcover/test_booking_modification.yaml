@@ -23,7 +23,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 00:45:34 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/instant_booking/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/instant_booking/
   response:
     body:
       string: !!binary |
@@ -112,7 +112,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 00:45:35 GMT
     method: PATCH
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/6M9BQ-3UHTK-INS/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/6M9BQ-3UHTK-INS/
   response:
     body:
       string: !!binary |

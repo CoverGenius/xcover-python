@@ -23,7 +23,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 18:58:46 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/instant_booking/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/instant_booking/
   response:
     body:
       string: !!binary |
@@ -112,7 +112,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 18:58:47 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/YJFPH-P38FW-INS/cancel
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/YJFPH-P38FW-INS/cancel
   response:
     body:
       string: !!binary |
@@ -202,7 +202,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 18:58:47 GMT
     method: GET
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/YJFPH-P38FW-INS/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/YJFPH-P38FW-INS/
   response:
     body:
       string: !!binary |
@@ -300,7 +300,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 18:58:48 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/YJFPH-P38FW-INS/confirm_cancellation/u7Thv-d6C5P-8FAQW-CCL/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/YJFPH-P38FW-INS/confirm_cancellation/u7Thv-d6C5P-8FAQW-CCL/
   response:
     body:
       string: !!binary |
@@ -390,7 +390,7 @@ interactions:
       date:
       - Mon, 22 Nov 2021 18:58:49 GMT
     method: GET
-    uri: https://api.xcover.com/xcover/partners/LLODT/bookings/YJFPH-P38FW-INS/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/bookings/YJFPH-P38FW-INS/
   response:
     body:
       string: !!binary |

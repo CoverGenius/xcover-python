@@ -22,7 +22,7 @@ interactions:
       date:
       - Thu, 30 Sep 2021 02:59:56 GMT
     method: POST
-    uri: https://api.xcover.com/xcover/partners/LLODT/quotes/
+    uri: https://staging.api.xcover.com/xcover/partners/LLODT/quotes/
   response:
     body:
       string: '{"type":"validation_error","message":"An API error occurred.","errors":{"policy_version":"Unexpected
