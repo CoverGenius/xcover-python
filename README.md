@@ -1,4 +1,5 @@
 # &middot; xcover-python &middot;
+
 [![Supported Versions](https://img.shields.io/pypi/pyversions/xcover-python.svg)](https://pypi.org/project/xcover-python)
 [![codecov](https://codecov.io/gh/CoverGenius/xcover-python/branch/master/graph/badge.svg?token=KINNTVZV07)](https://codecov.io/gh/CoverGenius/xcover-python)
 
@@ -16,7 +17,7 @@
 
 or
 
-    poertry install xcover-python
+    poetry install xcover-python
 
 ## Features
 
@@ -50,15 +51,17 @@ Alternatively, it is possible to use env variables.
 
 The full list of configuration options:
 
-* `XC_BASE_URL` (`XCoverConfig.base_url`): XCover base URL (e.g. `https://api.xcover.com/api/v2/`).
-* `XC_PARTNER_CODE` (`XCoverConfig.partner_code`): Partner code (e.g. `LLODT`).
-* `XC_HTTP_TIMEOUT` (`XCoverConfig.http_timeout`): HTTP timeout in seconds. Default value is `10`.
-* `XC_AUTH_API_KEY` (`XCoverConfig.auth_api_key`): API key to use.
-* `XC_AUTH_API_SECRET` (`XCoverConfig.auth_api_secret`): API secret to use.
-* `XC_AUTH_ALGORITHM` (`XCoverConfig.auth_algorithm`): HMAC encoding algorithm to use. Default is `hmac-sha512`.
-* `XC_AUTH_HEADERS` (`XCoverConfig.auth_headers`): Headers to sign. Default is `(request-target) date`.
-* `XC_RETRY_TOTAL` (`XCoverConfig.retry_total`): Total number of retries. Default is `5`.
-* `XC_RETRY_BACKOFF_FACTOR` (`XCoverConfig.retry_backoff_factor`): Backoff factor for retries timeout. Default is `2`.
+| Environment Variable | Config Property | Description | Default Value |
+|---------------------|-----------------|-------------|---------------|
+| `XC_BASE_URL` | `XCoverConfig.base_url` | XCover base URL (e.g. `https://api.xcover.com/api/v2/`) | - |
+| `XC_PARTNER_CODE` | `XCoverConfig.partner_code` | Partner code (e.g. `LLODT`) | - |
+| `XC_HTTP_TIMEOUT` | `XCoverConfig.http_timeout` | HTTP timeout in seconds | `10` |
+| `XC_AUTH_API_KEY` | `XCoverConfig.auth_api_key` | API key to use | - |
+| `XC_AUTH_API_SECRET` | `XCoverConfig.auth_api_secret` | API secret to use | - |
+| `XC_AUTH_ALGORITHM` | `XCoverConfig.auth_algorithm` | HMAC encoding algorithm to use | `hmac-sha512` |
+| `XC_AUTH_HEADERS` | `XCoverConfig.auth_headers` | Headers to sign | `(request-target) date` |
+| `XC_RETRY_TOTAL` | `XCoverConfig.retry_total` | Total number of retries | `5` |
+| `XC_RETRY_BACKOFF_FACTOR` | `XCoverConfig.retry_backoff_factor` | Backoff factor for retries timeout | `2` |
 
 ## Usage example
 
